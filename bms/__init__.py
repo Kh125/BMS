@@ -10,6 +10,9 @@ bcrypt = Bcrypt(app)
 loginmanager = LoginManager(app)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
+loginmanager.login_view = 'main.login'
+loginmanager.login_message = 'You need to login to access this page'
+loginmanager.login_message_category = 'info'
 
 
 from bms.owners.routes import owners

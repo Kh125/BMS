@@ -30,12 +30,12 @@ def login():
     if user and bcrypt.check_password_hash(user.password,forms.password.data):
       login_user(user)
       flash(f'Login success (db)!','success')
+      req_page = request.args.get('next')
       if user.usertype == 1:
-        return redirect(url_for('owners.owner_dash'))
-      return redirect(url_for('parents.parent_dash'))
+        return redirect(req_page) if req_page else redirect(url_for('owners.owner_dash'))
+      return redirect(req_page) if req_page else redirect(url_for('parents.parent_dash'))
     else:
-      flash(f'Login failed!','danger')
-      return redirect(url_for('main.register'))
+      flash(f'Incorrect username or password!','danger')
   return render_template('login.html',title='Login',forms = forms)
 
 @main.route("/register",methods=['GET','POST'])
