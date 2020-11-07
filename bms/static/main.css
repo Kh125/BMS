@@ -1,0 +1,37 @@
+body{
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 20px;
+  outline: none
+}
+
+body a{
+  outline: none
+}
+
+nav .nav-link{
+    color: black !important;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 23px;
+    outline: none
+}
+
+.hov-ef{
+  border-bottom: 2px solid transparent;
+}
+
+.hov-ef:hover{
+  display: inline;
+  border-bottom: 2px solid #f2d649;  
+}
+
+.logo-font{
+  font-family: 'Faster One', cursive;
+}
+
+.title-font{
+  font-family: 'Playfair Display SC', serif;
+}
+
+.auth-form{
+  width: 390px;
+}

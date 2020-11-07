@@ -1,0 +1,13 @@
+CREATE TABLE user
+( id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  usertype bool Not Null
+);
+
+hash_password = bcrypt.generate_password_hash(forms.password.data).decode('utf-8')
+    user = User(name=forms.username.data,password=hash_password,email=forms.email.data,usertype=1)
+    db.session.add(user)
+    db.session.commit()
+    flash(f'Registeration success.You can login now!','success')
+    return redirect(url_for('main.login'))

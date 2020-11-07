@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="row border mx-auto mt-4 mb-4 auth-form">
+    <form action="" method="POST" class="p-3 mt-2 w-100">
+      {{ forms.hidden_tag() }}
+      <fieldset>
+        <legend class="border-bottom title-font pb-3">
+          Register!
+        </legend>
+
+        <div class="form-group">
+          {{ forms.username.label(class="form-control-label") }}
+          {% if forms.username.errors %}
+          {{ forms.username(class="form-control form-control-lg is-invalid")}}
+          <div class="invalid-feedback">
+            {% for error in forms.username.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %}
+          {{ forms.username(class="form-control form-control-lg")}}
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          {{ forms.email.label(class="form-control-label") }}
+          {% if forms.email.errors %}
+          {{ forms.email(class="form-control form-control-lg is-invalid")}}
+          <div class="invalid-feedback">
+            {% for error in forms.email.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %}
+          {{ forms.email(class="form-control form-control-lg")}}
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          {{ forms.password.label(class="form-control-label") }}
+          {% if forms.password.errors %}
+          {{ forms.password(class="form-control form-control-lg is-invalid")}}
+          <div class="invalid-feedback">
+            {% for error in forms.password.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %}
+          {{ forms.password(class="form-control form-control-lg")}}
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          {{ forms.confirm_password.label(class="form-control-label") }}
+          {% if forms.confirm_password.errors %}
+          {{ forms.confirm_password(class="form-control form-control-lg is-invalid")}}
+          <div class="invalid-feedback">
+            {% for error in forms.confirm_password.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %}
+          {{ forms.confirm_password(class="form-control form-control-lg")}}
+          {% endif %}
+        </div>
+
+        <div class="form-group border-top border-bottom p-3">
+          <div class="row">
+            <div class="col-12 col-md-6"><p>Register as :</p></div>
+            <div class="col-12 col-md-6">
+              <input type="checkbox" data-toggle="switchbutton" data-onlabel="Owner" data-offlabel="Parent" data-onstyle="success" data-offstyle="danger" name="check_type" value="1">
+            </div>
+          </div>          
+        </div>
+      </fieldset>
+      <div class="form-group">
+        {{ forms.submit(class="btn btn-dark") }}
+      </div>
+    </form>  
+    <div class="span ml-auto border-top p-2 text-right" style="width:100%">
+      <small class="text-muted p-2">
+        Already have an account? <a href="{{ url_for('main.login') }}">Login</a>
+      </small>
+    </div>     
+  </div>
+  
+  
+{% endblock content %}
