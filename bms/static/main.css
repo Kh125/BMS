@@ -35,3 +35,49 @@ nav .nav-link{
 .auth-form{
   width: 390px;
 }
+
+.box-footer{
+  width: 390px;
+}
+
+@media (min-width: 576px) {
+.auth-form{
+  width: 390px;
+}
+.box-footer{
+  width: 390px;
+}
+}
+
+@media (min-width: 768px) {
+.auth-form{
+  width: 430px;
+}
+.box-footer{
+  width: 100%;
+}
+}
+
+@media (min-width: 992px) {
+.auth-form{
+  width: 480px;
+}
+.box-footer{
+  width: 100%;
+}
+}
+
+@media (min-width: 1200px) {
+.auth-form{
+  width: 520px;
+}
+.box-footer{
+  width: 100%;
+}
+}
+
+@media (min-width: 1500px) {
+.box-footer{
+  width: 75%;
+}
+}
