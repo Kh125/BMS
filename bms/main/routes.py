@@ -2,7 +2,7 @@ from flask import Blueprint,render_template,redirect,flash,url_for,request
 from bms.main.forms import LoginForm,RegisterForm
 from bms.models import User
 from bms import db,bcrypt
-from flask_login import login_user,logout_user,login_required,current_user
+from flask_login import login_user,logout_user,current_user
 
 main = Blueprint('main',__name__)
 
@@ -18,6 +18,10 @@ def about():
 @main.route("/contact")
 def contact():
   return render_template('contact.html',title='Contact')
+
+@main.route("/school-list")
+def feedback():
+  return render_template('school_list.html',title='School List')
 
 @main.route("/login",methods=['GET','POST'])
 def login():

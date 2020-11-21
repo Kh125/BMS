@@ -1,6 +1,101 @@
 {% extends 'layout.html' %}
 {% block content %}
-  <h2>
-    About
-  </h2>
+  <div class="section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 order-md-2">
+          <figure class="img-dotted-bg">
+            <img src="{{url_for('static',filename='logo/user.png')}}" alt="Image" class="img-fluid">
+          </figure>
+        </div>
+        <div class="col-md-5 mr-auto">
+          <h2 class="mb-4 title-font"><strong>Creativity</strong> Is Our Passion</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, quos, adipisci aliquid similique
+            saepe ipsa minus maxime alias libero nam quis officia eum impedit. At quisquam reprehenderit cum hic enim?</p>
+          <p>Necessitatibus eligendi molestias similique tempore, optio nobis numquam temporibus debitis cum aspernatur,
+            eius, nihil soluta sapiente enim. Incidunt ipsam praesentium voluptate in pariatur dignissimos, ab corporis
+            minima ea odio asperiores.</p>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section mt-5">
+    <div class="container-fluid">
+      <div class="row justify-content-center mb-5 element-animate">
+        <div class="col-md-8 text-center">
+          <h2 class="mb-4 title-font">Meet Our <strong>Team</strong></h2>
+          <p class="mb-5 lead">You can know about our team member and you can contact freely.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="media d-block media-custom text-center mx-auto" style="width:350px">
+            <a href="#"><img src="{{url_for('static',filename='logo/user.png')}}" alt="Image Placeholder" class="img-fluid" style="width:225px;height: 225px;"></a>
+            <div class="media-body mt-3">
+              <h3 class="mt-0 text-black">Chan Min Kyaw</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minus repudiandae amet.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="media d-block media-custom text-center mx-auto" style="width:350px">
+            <a href="#"><img src="{{url_for('static',filename='logo/user.png')}}" alt="Image Placeholder" class="img-fluid" style="width:225px;height: 225px;"></a>
+            <div class="media-body mt-3">
+              <h3 class="mt-0 text-black">Hnin Htet Htet</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minus repudiandae amet.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="media d-block media-custom text-center mx-auto" style="width:350px">
+            <a href="#"><img src="{{url_for('static',filename='logo/user.png')}}" alt="Image Placeholder" class="img-fluid" style="width:225px;height: 225px;"></a>
+            <div class="media-body mt-3">
+              <h3 class="mt-0 text-black">Ingyin Khin</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minus repudiandae amet.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="media d-block media-custom text-center mx-auto" style="width:350px">
+            <a href="#"><img src="{{url_for('static',filename='logo/user.png')}}" alt="Image Placeholder" class="img-fluid" style="width:225px;height: 225px;"></a>
+            <div class="media-body mt-3">
+              <h3 class="mt-0 text-black">Khant Hmuu</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minus repudiandae amet.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="media d-block media-custom text-center mx-auto" style="width:350px">
+            <a href="#"><img src="{{url_for('static',filename='logo/user.png')}}" alt="Image Placeholder" class="img-fluid" style="width:225px;height: 225px;"></a>
+            <div class="media-body mt-3">
+              <h3 class="mt-0 text-black">Myo Myo Khant</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minus repudiandae amet.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <div class="media d-block media-custom text-center mx-auto" style="width:350px">
+            <a href="#"><img src="{{url_for('static',filename='logo/user.png')}}" alt="Image Placeholder" class="img-fluid" style="width:225px;height: 225px;"></a>
+            <div class="media-body mt-3">
+              <h3 class="mt-0 text-black">Zayar Min Maung</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam minus repudiandae amet.</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  </div>
+  <!-- END section -->
+{% include "footer.html" %}
 {% endblock content%}
+
+
+

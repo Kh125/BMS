@@ -1,0 +1,118 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="portfolio p-4">
+    <div class="container">
+      <div class="row mb-5">
+
+        <div class="col-12 text-center">
+          <h2 class="mb-4 title-font">School List</h2>
+          <p class="text-muted">We prefer you a good care of your children to reach to their school safely.</p>
+        </div>
+        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+          <div class="input-group mt-5" style="margin: 0px auto">
+            <span class="input-group-addon" style="line-height:50px;background:#222;text-align:center;color:yellow;width: 100px;height: 50px;">Search</span>
+            <input type="text" name="search_text" id="search_text" placeholder="Search by Township" class="form-control"  style="box-shadow:none;border:none;border:1px solid #222;color:#222;height: 50px;border-bottom-right-radius: 25px;border-top-right-radius: 25px;" />
+          </div>
+        </div>
+        <!-- end search school   -->   
+
+      </div>
+      <div class="row" id="resultschool">
+
+        <div class="col-lg-4">
+          <a href="portfolio-single.php" class="work-thumb" style="width: 280px; height: 290px;margin:0px auto;margin-bottom: 20px;">
+            <div class="work-text">
+              <h2>Sanchaung</h2>
+              <p style="color:yellow;">B.E.H.S</p>
+            </div>
+            <img src="{{ url_for('static',filename='images/work_2.jpg') }}" alt="Image" class="img-fluid" style="width: 280px;height: 290px;">
+          </a>
+        </div>
+        <div class="col-lg-4">
+          <a href="portfolio-single.php" class="work-thumb" style="width: 280px; height: 290px;margin:0px auto;margin-bottom: 20px;">
+            <div class="work-text">
+              <h2>Yankin</h2>
+              <p style="color:yellow;">B.E.H.S</p>
+            </div>
+            <img src="{{ url_for('static',filename='images/work_2.jpg') }}" alt="Image" class="img-fluid" style="width: 280px;height: 290px;">
+          </a>
+        </div>
+        <div class="col-lg-4">
+          <a href="portfolio-single.php" class="work-thumb" style="width: 280px; height: 290px;margin:0px auto;margin-bottom: 20px;">
+            <div class="work-text">
+              <h2>Bahan</h2>
+              <p style="color:yellow;">B.E.H.S-1</p>
+            </div>
+            <img src="{{ url_for('static',filename='images/work_2.jpg') }}" alt="Image" class="img-fluid" style="width: 280px;height: 290px;">
+          </a>
+        </div>
+        <div class="col-lg-4">
+          <a href="portfolio-single.php" class="work-thumb" style="width: 280px; height: 290px;margin:0px auto;margin-bottom: 20px;">
+            <div class="work-text">
+              <h2>Kamayut</h2>
+              <p style="color:yellow;">B.E.H.S-1</p>
+            </div>
+            <img src="{{ url_for('static',filename='images/work_2.jpg') }}" alt="Image" class="img-fluid" style="width: 280px;height: 290px;">
+          </a>
+        </div>
+        <div class="col-lg-4">
+          <a href="portfolio-single.php" class="work-thumb" style="width: 280px; height: 290px;margin:0px auto;margin-bottom: 20px;">
+            <div class="work-text">
+              <h2>Botahtaung</h2>
+              <p style="color:yellow;">B.E.H.S-1</p>
+            </div>
+            <img src="{{ url_for('static',filename='images/work_4.jpg') }}" alt="Image" class="img-fluid" style="width: 280px;height: 290px;">
+          </a>
+        </div>
+      </div>
+      <div class="row" id="resultschool1">
+        
+        <div class="col-lg-4">
+          <a href="portfolio-single.php" class="work-thumb" style="width: 280px; height: 290px;margin:0px auto;margin-bottom: 20px;">
+            <div class="work-text">
+              <h2>Sanchaung</h2>
+              <p style="color:yellow;">B.E.H.S-1</p>
+            </div>
+            <img src="{{ url_for('static',filename='images/work_2.jpg') }}" alt="Image" class="img-fluid" style="width: 280px;height: 290px;">
+          </a>
+        </div>
+        <div class="col-lg-4">
+          <a href="portfolio-single.php" class="work-thumb" style="width: 280px; height: 290px;margin:0px auto;margin-bottom: 20px;">
+            <div class="work-text">
+              <h2>Yankin</h2>
+              <p style="color:yellow;">B.E.M.S-1</p>
+            </div>
+            <img src="{{ url_for('static',filename='images/work_2.jpg') }}" alt="Image" class="img-fluid" style="width: 280px;height: 290px;">
+          </a>
+        </div>
+        <div class="col-lg-4">
+          <a href="portfolio-single.php" class="work-thumb" style="width: 280px; height: 290px;margin:0px auto;margin-bottom: 20px;">
+            <div class="work-text">
+              <h2>Bahan</h2>
+              <p style="color:yellow;">B.E.H.S-1</p>
+            </div>
+            <img src="{{ url_for('static',filename='images/work_2.jpg') }}" alt="Image" class="img-fluid" style="width: 280px;height: 290px;">
+          </a>
+        </div>
+        <div class="col-lg-4">
+          <a href="portfolio-single.php" class="work-thumb" style="width: 280px; height: 290px;margin:0px auto;margin-bottom: 20px;">
+            <div class="work-text">
+              <h2>Kamayut</h2>
+              <p style="color:yellow;">B.E.H.S-1</p>
+            </div>
+            <img src="{{ url_for('static',filename='images/work_2.jpg') }}" alt="Image" class="img-fluid" style="width: 280px;height: 290px;">
+          </a>
+        </div>
+        <div class="col-lg-4">
+          <a href="portfolio-single.php" class="work-thumb" style="width: 280px; height: 290px;margin:0px auto;margin-bottom: 20px;">
+            <div class="work-text">
+              <h2>Botahtaung</h2>
+              <p style="color:yellow;">B.E.H.S-1</p>
+            </div>
+            <img src="{{ url_for('static',filename='images/work_4.jpg') }}" alt="Image" class="img-fluid" style="width: 280px;height: 290px;">
+          </a>
+        </div>
+      </div>  
+    </div>
+  </div>
+{% endblock content %}
