@@ -1,8 +1,116 @@
-{% extends 'layout.html' %}
+{% extends 'dashboard_layout.html' %} 
 {% block content %}
-  <div class="">
-    <h2>
-      Parent_profile
-    </h2>
-  </div>
+<div id="inline" class="profile">
+    <div class="hideprofiletable">
+			<table>
+				<div class="upload-btn-wrapper">
+					<button class="btn">Click to Upload</button>
+          <input type="file" name="photo"/>
+        </div>
+        <tr>
+          <td> 
+              <i class="fa fa-bank">&nbsp;&nbsp;&nbsp;</i>Name&nbsp;&nbsp;
+          </td>                                    
+          <td>
+             <input type="text" name="name" value="" class="inputprofile" id="proname">
+          </td>
+        </tr>
+        <tr>
+          <td> 
+            <i class="fa fa-google">&nbsp;&nbsp;&nbsp;</i>Email&nbsp;&nbsp;
+          </td>                                    
+          <td>
+            <input type="text" name="email" value="" class="inputprofile" disabled="disabled">
+          </td>
+        </tr>
+        <tr>
+          <td> 
+            <i class="fa fa-credit-card">&nbsp;&nbsp;&nbsp;</i>NRC&nbsp;&nbsp;
+          </td>                                    
+          <td>
+            <input type="text" name="nrc" value="" class="inputprofile" disabled="disabled">
+          </td>
+        </tr>
+        <tr>
+          <td> 
+            <i class="fa fa-phone">&nbsp;&nbsp;&nbsp;</i>Phone&nbsp;&nbsp;
+          </td>                                    
+          <td>
+            <input type="text" name="phone" value="" class="inputprofile" id="prophone">
+          </td>
+        </tr>
+        <tr>
+          <td> 
+            <i class="fa fa-location-arrow">&nbsp;&nbsp;&nbsp;</i>Address&nbsp;&nbsp;
+          </td>                                    
+          <td>
+            <input type="text" name="address" value="" class="inputprofile" id="proaddress">
+          </td>
+        </tr>
+      </table>
+      <button class="profileback">Back</button>
+      <button class="profilesubmit">Save</button>
+    </div>
+
+    <div class="profilebox">                    
+      <div class="profileimgbox">                  
+        <div class="outercircle">                   
+          <div class="innercircle">                  
+            <img src="{{ url_for('static',filename='logo/user.png') }}" style="width: 170px;height: 170px;border-radius: 50%;" data-lity data-lity-desc="Photo of a flower">
+          </div>
+          </div>
+            <h1>Mike</h1>
+            <p class="bio">Hello, My name is Mike. I'm a UIT student.</p>
+        </div>   
+                   
+        <div class="profilecontent">
+          <div class="showprofiletable">
+          <table>
+            <tr>
+              <td> 
+              <i class="fa fa-bank">&nbsp;&nbsp;&nbsp;</i>Name&nbsp;&nbsp;
+              </td>              
+              <td>
+              Mike
+              </td>
+            </tr>
+            <tr>
+              <td> 
+              <i class="fa fa-google">&nbsp;&nbsp;&nbsp;</i>Email&nbsp;&nbsp;
+              </td>              
+              <td>
+              mike@gmail.com
+            </td>
+            </tr>
+
+            <tr>
+              <td> 
+              <i class="fa fa-credit-card">&nbsp;&nbsp;&nbsp;</i>NRC&nbsp;&nbsp;
+              </td>              
+              <td>
+              7/MANYANA(N)034934
+              </td>
+            </tr>
+            <tr>
+              <td> 
+              <i class="fa fa-location-arrow">&nbsp;&nbsp;&nbsp;</i>Address&nbsp;&nbsp;
+              </td>              
+              <td>
+              Yangon, Myanmar
+              </td>
+            </tr>          
+            <tr>
+              <td> 
+              <i class="fa fa-phone">&nbsp;&nbsp;&nbsp;</i>Phone&nbsp;&nbsp;
+              </td>              
+              <td>
+              0934323434238
+              </td>
+            </tr>
+          </table>
+        </div>  
+      </div>
+      <button class="profilenext">Edit</button>
+    </div>
+</div>        
 {% endblock content%}

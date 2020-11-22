@@ -1,8 +1,91 @@
 {% extends 'layout.html' %}
 {% block content %}
-  <div class="container-fluid">
-    <h2>
-      Contact
-    </h2>
+  <div class="contact">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 text-center">
+          <p class="title-font">Contact Info</p>
+          <p class="mb-5 text-muted">
+            Got a question? We love to hear from you.Send us message and we'll respond as soon as possible.
+          </p>          
+          <br>
+        </div>
+
+        <div class="col-md-6 mb-5 order-2 mt-3">
+          <form action="#" method="post">
+            <div class="row">
+
+              <div class="col-md-6 form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control ">
+              </div>
+              
+              <div class="col-md-6 form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" class="form-control ">
+              </div>
+            
+            </div>
+
+            <div class="row">
+            
+              <div class="col-md-12 form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control ">
+              </div>
+
+            </div>
+
+            <div class="row">
+            
+              <div class="col-md-12 form-group">
+                <label for="message">Write Message</label>
+                <textarea name="message" id="message" class="form-control " cols="30" rows="8" style="resize: none;"></textarea>
+              </div>
+            
+            </div>
+            <div class="row">
+              
+              <div class="col-md-6 form-group">
+                <input type="submit" value="Send" class="btn btn-primary px-3 py-3">
+              </div>
+            
+            </div>
+          </form>
+        </div>
+
+        <div class="col-md-6 order-2 mb-5">
+          <div class="row justify-content-right mt-5">
+            <div class="col-md-8 mx-auto contact-form-contact-info">
+              <p class="d-flex">
+                <span class="pr-5">
+                  <ion-icon name="location-outline" style="font-size:40px;"></ion-icon>
+                </span>
+                <span>
+                  University of Information Technology, Parami Road, Hlaing Campus, Yangon, Myanmar
+                </span>
+              </p>
+
+              <p class="d-flex">
+                <span class="pr-5">
+                  <ion-icon name="call-outline" style="font-size:40px;"></ion-icon>
+                </span>                
+                <span>09-791234567</span>
+              </p>
+
+              <p class="d-flex">
+                <span class="pr-5">
+                  <ion-icon name="mail-outline" style="font-size:40px;"></ion-icon>
+                </span>                
+                <span>fms1235679@gmail.com</span>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 {% endblock content%}

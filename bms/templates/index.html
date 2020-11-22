@@ -1,55 +1,141 @@
 {% extends 'layout.html' %}
 {% block content %}
+  <!-- welcome-content -->
+  <div id="carouselExampleIndicators" class="carousel slide container-fluid" data-ride="carousel" style="max-height:620px;">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{{ url_for('static',filename='images/s1.jpg')}}" alt="First slide" style="z-index:0;">
+        <div class="carousel-caption d-none d-block">
+          <h5 class="title-font" style="font-size:5vw;padding-top:10vw">Hello From FMS</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{{ url_for('static',filename='images/s7.jpg')}}" alt="Second slide" style="z-index:0;">
+        <div class="carousel-caption d-none d-block">
+          <h5 class="title-font" style="font-size:5vw;padding-top:10vw">You are welcome</h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{{ url_for('static',filename='images/s6.jpg')}}" alt="Sixth slide" style="z-index:0;">
+        <div class="carousel-caption d-none d-block">
+          <h5 class="title-font" style="font-size:5vw;padding-top:10vw">All You Need is Here</h5>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="icon icon-arrow-left-circle mb-4 d-block" aria-hidden="true" style="font-size:30px;"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="icon icon-arrow-right-circle mb-4 d-block" aria-hidden="true" style="font-size:30px;"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <!-- welcome-content-->
 
-  <div class="container-fluid features" id="features">
-    <p class="d-block title-font mb-4 text-center">Featured Services</p>
-    <div class="row mt-5 p-4">
+  <!-- school-list start -->
+  <div class="portfolio p-4 mb-2">
+    <div class="container">
+      <div class="row mb-5">
+
+        <div class="col-12 text-center">
+          <h2 class="mb-4 title-font">School List</h2>
+          <p class="text-muted">We prefer you a good care of your children to reach to their school safely.</p>
+        </div>        
+
+      </div>
+      <div class="row" id="resultschool">
+
+        <div class="col-md-6 col-lg-4">
+          <a href="portfolio-single.php" class="work-thumb" style="width: 280px; height: 290px;margin:0px auto;margin-bottom: 20px;">
+            <div class="work-text">
+              <h2>Sanchaung</h2>
+              <p style="color:yellow;">B.E.H.S</p>
+            </div>
+            <img src="{{ url_for('static',filename='images/work_2.jpg') }}" alt="Image" class="img-fluid" style="width: 280px;height: 290px;">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a href="portfolio-single.php" class="work-thumb" style="width: 280px; height: 290px;margin:0px auto;margin-bottom: 20px;">
+            <div class="work-text">
+              <h2>Yankin</h2>
+              <p style="color:yellow;">B.E.H.S</p>
+            </div>
+            <img src="{{ url_for('static',filename='images/work_2.jpg') }}" alt="Image" class="img-fluid" style="width: 280px;height: 290px;">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a href="portfolio-single.php" class="work-thumb" style="width: 280px; height: 290px;margin:0px auto;margin-bottom: 20px;">
+            <div class="work-text">
+              <h2>Bahan</h2>
+              <p style="color:yellow;">B.E.H.S-1</p>
+            </div>
+            <img src="{{ url_for('static',filename='images/work_2.jpg') }}" alt="Image" class="img-fluid" style="width: 280px;height: 290px;">
+          </a>
+        </div>        
+      </div>     
+      <p class="text-muted text-center border p-3">Here is a few info about the lists of school where we provide our services!</p>  
+    </div>
+  </div>
+  <!-- school-list end -->
+  <hr style="width:45%;opacity:0.8;padding:0px;margin:0px auto;display:block;">
+  <!-- service start -->
+  <div class="container-fluid features mt-4 mb-2" id="features">
+    <p class="d-block title-font mb-4 text-center">Grab our Services</p>
+    <p class="text-muted text-center">You can grab our services we provided.</p>
+    <div class="row mt-3 p-2">
       <div class="col-lg-5 mx-auto mb-3 p-5">      
           <h2 class="mb-4 section-title">The <strong>Services</strong> That We Are Providing
           </h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id autem temporibus blanditiis accusamus perferendis
-            libero accusantium nisi itaque tempore, harum aliquid aut, sapiente dolor tenetur. Tempora corrupti suscipit
-            delectus perspiciatis!
-          </p>
-          <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, voluptatibus.
-          </p>          
+          <p>Have you ever thought about your school bus transportation you are already being a part of it?What sorts do you long for?Here Take them all to your environment! We are with you!</p>    
+          <p class='mb-5'>Your best school bus transportation is here!Why are you waiting for?Come join with us!
+          </p>        
       </div>
 
       <div class="col-lg-7">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 mb-4">
-              <div class="service p-5">
-                <span class="icon icon-shield mb-4 d-block" style="font-size:3rem"></span>
-                <h3>Branding</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias id volume amet.</p>
-              </div>
-            </div>
+          <div class="row">            
             <div class="col-lg-6 col-md-6 mb-4">
               <div class="service p-5">
                 <span class="icon icon-screen-desktop mb-4 d-block" style="font-size:3rem"></span>
-                <h3>Web Design</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias id volume amet.</p>
+                <h3>Design</h3>
+                <p>Boring the plants off the complexity of web designs? Let's face it now at ease!</p>
               </div>
             </div>
 
             <div class="col-lg-6 col-md-6 mb-4">
               <div class="service p-5">
-                <span class="icon icon-screen-smartphone mb-4 d-block" style="font-size:3rem"></span>
-                <h3>App Design</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias id volume amet.</p>
+                <span class="icon icon-shield mb-4 d-block" style="font-size:3rem"></span>
+                <h3>Safety</h3>
+                <p>You can track location of your school bus your kid is getting on by GPS !</p>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 mb-4">
+              <div class="service p-5">
+                <span class="icon icon-user-following mb-4 d-block" style="font-size:3rem"></span>
+                <h3>Reliable?</h3>
+                <p>Having problems with payment or kinda things? No longer catch out with those by using our website!</p>
               </div>
             </div>
             <div class="col-lg-6 col-md-6 mb-4">
               <div class="service p-5">
-                <span class="icon icon-rocket mb-4 d-block" style="font-size:3rem"></span>
-                <h3>Start Up</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias id volume amet.</p>
+                <span class="icon icon-grid mb-4 d-block" style="font-size:3rem"></span>
+                <h3>User-Friendly</h3>
+                <p>Not familiar with tech? Don't worry,here is y'all can easily catch the transaction on!</p>
               </div>
             </div>
           </div>
         </div>
       </div>
   </div>
+  <!-- service end -->
+  <hr style="width:65%;opacity:0.8;padding:0px;margin:0px auto;display:block;">
+  <!-- feedback-start -->
   <div class="block-11 feedback bg-dark p-4">
       <div class="container">
         <div class="row justify-content-center mb-5">
@@ -150,5 +236,6 @@
         </div>
       </div>
     </div>
+    <!-- feedback end -->
 {% include "footer.html" %}
 {% endblock content%}
