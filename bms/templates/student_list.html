@@ -3,7 +3,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bulma.min.css">  
 {% endblock style %}
-{% block content %}          
+{% block content %}   
+<nav aria-label="breadcrumb" style="margin-top:-39px;">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('owners.owner_dash') }}" style="font-size: 20px;
+  color: black;">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page" style="font-size: 20px;">Student List</li>
+  </ol>
+</nav>       
   <div class="table-data container table-container">    
     <div class="btn-group">
       <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:white;border:1px solid grey;width:175px;">

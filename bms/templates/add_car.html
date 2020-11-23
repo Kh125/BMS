@@ -1,0 +1,93 @@
+{% extends 'dashboard_layout.html' %}
+{% block li %}
+<li class="nav-item">
+  <a class="nav-link mr-2" href="" style="color:black;">Add</a>
+</li> 
+<li class="nav-item">
+  <a class="nav-link mr-2" href="" style="color:black;">Edit</a>
+</li> 
+<li class="nav-item">
+  <a class="nav-link mr-2" href="" style="color:black;">Remove</a>
+</li> 
+{% endblock li %}
+{% block content %}
+      <div class="hideprofiletable" style="display:block">
+			    <table>
+            <tr style="background:transparent;">
+              <td style="border:none;">
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:130px">
+                    School
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item">Sanchaung</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item">Hlaing</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item">Mayangon</a>                                  
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:130px">
+                    Time
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item">Morning</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item">Afternoon</a>
+                  </div>
+                </div>
+              </td>
+            </tr>            
+            <tr>
+              <td> 
+              <i class="fab fa-modx">&nbsp;&nbsp;&nbsp;</i>Model&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="name" placeholder="eg. Honda Fit" class="inputprofile">
+              </td>
+            </tr>
+            <tr>
+              <td> 
+              <i class="fas fa-border-style">&nbsp;&nbsp;&nbsp;</i>Type&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="type" placeholder="eg. luxury" class="inputprofile">
+            </td>
+            </tr>
+
+            <tr>
+              <td> 
+              <i class="far fa-address-card">&nbsp;&nbsp;&nbsp;</i>Car No.
+              <b style="color:red"> *</b>&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="carno" placeholder="eg. AA-1111" class="inputprofile">
+              </td>
+            </tr>
+            <tr>
+              <td> 
+              <i class="fas fa-users">&nbsp;&nbsp;&nbsp;</i>No. of Passengers&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="nopassenger" placeholder="eg. 12" class="inputprofile">
+              </td>
+            </tr>          
+            <tr>
+              <td> 
+              <i class="fas fa-palette">&nbsp;&nbsp;&nbsp;</i>Color&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="color" placeholder="eg. Black" class="inputprofile">
+              </td>
+            </tr>                                         
+          </table>    
+          <div class="photo p-2 border">
+            <input type="file" class="photo-upload">  
+          </div>    
+          <button class="profileback-car">Back</button>
+          <button class="profilesubmit-car">Save</button>
+      </div>
+{% endblock content %}

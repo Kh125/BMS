@@ -1,0 +1,61 @@
+{% extends 'dashboard_layout.html' %}
+{% block content %}
+      <div class="showcarinfobox">
+        <p class="text-left ml-3 sec-title-font">Car Information</p>                              
+          <div class="car-content">
+            <table>
+              <tr>
+                <td> 
+                  <i class="fab fa-modx">&nbsp;&nbsp;&nbsp;</i>Model&nbsp;&nbsp;
+                </td>
+                <td>
+                  C-9
+                </td>
+              </tr>  
+              <tr>
+                <td> 
+                  <i class="fas fa-border-style">&nbsp;&nbsp;&nbsp;</i>Car Type&nbsp;&nbsp;
+                </td>
+                <td>
+                  Toyota
+                </td>
+              </tr>
+              <tr>
+                <td>                   
+                  <i class="far fa-address-card">&nbsp;&nbsp;&nbsp;</i>Car Number&nbsp;&nbsp;
+                </td>
+                <td>
+                  CN-99332567890
+                </td>
+              </tr>
+              <tr>
+                <td> 
+                  <i class="fas fa-users">&nbsp;&nbsp;&nbsp;</i>Number of passengers&nbsp;&nbsp;
+                </td>
+                <td>
+                  12
+                </td>
+              </tr>
+              <tr>
+                <td> 
+                  <i class="fas fa-palette">&nbsp;&nbsp;&nbsp;</i>Color&nbsp;&nbsp;
+                </td>
+                <td>
+                Grey
+                </td>
+              </tr>
+            </table>
+          </div>                 
+          <div class="car-back-button">      
+            <button class="car-back" href="#">Back</button>
+          </div>         
+        </div>
+      </div>
+{% endblock content %}
+{% block script %}
+<script>
+  $jq=jQuery.noConflict();
+  $jq(document).ready(function(e) {
+  });
+</script>
+{% endblock script %}

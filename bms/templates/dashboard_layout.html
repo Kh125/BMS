@@ -17,12 +17,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet"> 
     <!-- css -->
     <link rel="stylesheet" href="{{url_for('static',filename='dashboard.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='lity.css')}}">
     
     <!-- script -->
     <script src="https://use.fontawesome.com/2092b8842d.js"></script>
+    <script src="https://kit.fontawesome.com/892f1c3c7c.js" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     {% if title %}
     <title>BMS - {{ title }}</title>
@@ -35,7 +38,7 @@
         <!-- Sidebar Holder -->
         <nav id="sidebar" class="active">
             <div class="sidebar-header">
-                <a class="logo-font navbar-brand mr-5" href="#">
+                <a class="logo-font navbar-brand mr-5" onclick="window.location.reload(true)" style="cursor:pointer;">
                 <img src="{{ url_for('static',filename='logo/bus2.png')}}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">&nbsp;&nbsp;&nbsp;
                 BMS</a>
             </div>
@@ -54,9 +57,15 @@
                       <span class="icon icon-speedometer"></span>
                       Dashboard
                     </a>  
-                </li>     
+                </li>  
                 <li>
-                    <a href="#">
+                    <a href="{{ url_for('owners.car_list') }}">
+                      <span class="icon icon-list"></span>
+                      Car List
+                    </a>
+                </li>   
+                <li>
+                    <a href="{{ url_for('owners.student_list') }}">
                       <span class="icon icon-list"></span>
                       Student List
                     </a>
@@ -91,28 +100,27 @@
                         <i class="fa fa-align-justify" aria-hidden="true"></i>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav mr-auto">                           
+                        <ul class="left-nav nav navbar-nav mr-auto">                           
                             {% if current_user.usertype == 1 %}
-                              <li class="nav-item pb-2">
-                                <a class="nav-link" href="" style="color:black">New</a>
-                              </li> 
+                              {% block li %}
+                              {% endblock li %}
                             {% else %}
-                              <li class="nav-item pb-2">
+                              <li class="nav-item">
                                 <a class="nav-link" href="" style="color:black">View</a>
                               </li> 
                             {% endif %}                                                
                         </ul>
                         <ul class="nav navbar-nav ml-auto"> 
                           {% if current_user.is_authenticated %}
-                            <li class="nav-item pb-2">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ url_for('main.logout') }}" style="color:black">Logout</a>
                             </li>
                             {% if current_user.usertype == 1 %}
-                              <li class="nav-item pb-2">
+                              <li class="nav-item">
                                   <a class="nav-link" href="{{ url_for('owners.owner_profile') }}" style="color:black">Profile</a>
                               </li>
                             {% else %}
-                              <li class="nav-item pb-2">
+                              <li class="nav-item">
                                   <a class="nav-link" href="{{ url_for('parents.parent_profile') }}" style="color:black">Profile</a>
                               </li>
                             {% endif %}                                        

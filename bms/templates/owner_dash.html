@@ -1,116 +1,51 @@
 {% extends 'dashboard_layout.html' %}
 {% block content %}
-<div class="show-all-car">
+<div class="dashboard-content">
   <div class="row">
-    <div class="col-sm-12 col-lg-3 col-md-4 setcarcov">
-      <div class="setcar">
-        <div class="carinfocontent">
-          <span class="hidecardel"><a href=""><i class="fa fa-times-circle"></i></a></span>
-          <span class="hidecaredit"><a href=""><i class="fa fa-edit"></i></a></span>
-
-          <div class="img">
-            <img src="{{ url_for('static',filename='images/ferryschool.jpg') }}" style="width: 230px;height: 150px;border-top-left-radius:10px;border-top-right-radius:10px;" data-lity>
-          </div> 
-
-          <div class="carinf">    
-            <label class="carlab" style="font-size:19px;">
-              Car Model
-            </label>
-            <button class="carlab ahov" style="color: black;">
-              <a href="">More</a>
-            </button>
-          </div>
+    <div class="col-12 col-md-6 col-lg-6 mb-5">
+      <div class="feature-item ml-lg-4 ml-0">
+        <div class="header-text">
         </div>
+        <div class="img-content">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="txt-content">
+        <p class="title-font m-0 ml-2"><i class="fas fa-bus-alt"></i> &nbsp;&nbsp;Car List</p>
+        <p class="ml-2">Here is the list of your car running on our System</p>
+        <a href="{{ url_for('owners.car_list') }}" class="ml-2 p-2 pl-3 pr-3 bg-white text-dark">View</a>
+        </div>     
       </div>
     </div>
 
-    <div class="col-sm-12 col-lg-3 col-md-4 setcarcov">
-      <div class="setcar">
-        <div class="carinfocontent">
-          <span class="hidecardel"><a href=""><i class="fa fa-times-circle"></i></a></span>
-          <span class="hidecaredit"><a href=""><i class="fa fa-edit"></i></a></span>
-
-          <div class="img">
-            <img src="{{ url_for('static',filename='images/ferryschool.jpg') }}" style="width: 230px;height: 150px;border-top-left-radius:10px;border-top-right-radius:10px;" data-lity>
-          </div> 
-
-          <div class="carinf">    
-            <label class="carlab" style="font-size:19px;">
-              Car Model
-            </label>
-            <button class="carlab ahov" style="color: black;">
-              <a href="">More</a>
-            </button>
-          </div>
+    <div class="col-12 col-md-6 col-lg-6 mb-5">
+      <div class="feature-item ml-lg-4 ml-0">
+        <div class="header-text" style="background:#eecbff">
         </div>
+        <div class="img-content">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="txt-content">
+        <p class="title-font m-0 ml-2"><i class="fas fa-users"></i>&nbsp;&nbsp;Student List</p>
+        <p class="ml-2">Here is the list of your student taking your services</p>
+        <a href="{{ url_for('owners.student_list') }}" class="ml-2 p-2 pl-3 pr-3 bg-white text-dark">View</a>
+        </div>     
       </div>
     </div>
 
-    <div class="col-sm-12 col-lg-3 col-md-4 setcarcov">
-      <div class="setcar">
-        <div class="carinfocontent">
-          <span class="hidecardel"><a href=""><i class="fa fa-times-circle"></i></a></span>
-          <span class="hidecaredit"><a href=""><i class="fa fa-edit"></i></a></span>
-
-          <div class="img">
-            <img src="{{ url_for('static',filename='images/ferryschool.jpg') }}" style="width: 230px;height: 150px;border-top-left-radius:10px;border-top-right-radius:10px;" data-lity>
-          </div> 
-
-          <div class="carinf">    
-            <label class="carlab" style="font-size:19px;">
-              Car Model
-            </label>
-            <button class="carlab ahov" style="color: black;">
-              <a href="">More</a>
-            </button>
-          </div>
+    <div class="col-12 col-md-6 col-lg-6 mb-5">
+      <div class="feature-item ml-lg-4 ml-0">
+        <div class="header-text" style="background:#70dcf0;">
         </div>
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-lg-3 col-md-4 setcarcov">
-      <div class="setcar">
-        <div class="carinfocontent">
-          <span class="hidecardel"><a href=""><i class="fa fa-times-circle"></i></a></span>
-          <span class="hidecaredit"><a href=""><i class="fa fa-edit"></i></a></span>
-
-          <div class="img">
-            <img src="{{ url_for('static',filename='images/ferryschool.jpg') }}" style="width: 230px;height: 150px;border-top-left-radius:10px;border-top-right-radius:10px;" data-lity>
-          </div> 
-
-          <div class="carinf">    
-            <label class="carlab" style="font-size:19px;">
-              Car Model
-            </label>
-            <button class="carlab ahov" style="color: black;">
-              <a href="">More</a>
-            </button>
-          </div>
+        <div class="img-content">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
         </div>
+        <div class="txt-content">
+        <p class="title-font m-0 ml-2"><i class="fas fa-wallet"></i>&nbsp;&nbsp;Salary List</p>
+        <p class="ml-2">Your salary income and expense</p>
+        <a href="#" class="ml-2 p-2 pl-3 pr-3 bg-white text-dark">View</a>
+        </div>     
       </div>
-    </div>
-
-    <div class="col-sm-12 col-lg-3 col-md-4 setcarcov">
-      <div class="setcar">
-        <div class="carinfocontent">
-          <span class="hidecardel"><a href=""><i class="fa fa-times-circle"></i></a></span>
-          <span class="hidecaredit"><a href=""><i class="fa fa-edit"></i></a></span>
-
-          <div class="img">
-            <img src="{{ url_for('static',filename='images/ferryschool.jpg') }}" style="width: 230px;height: 150px;border-top-left-radius:10px;border-top-right-radius:10px;" data-lity>
-          </div> 
-
-          <div class="carinf">    
-            <label class="carlab" style="font-size:19px;">
-              Car Model
-            </label>
-            <button class="carlab ahov" style="color: black;">
-              <a href="">More</a>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    </div>    
   </div>
 </div>
-{% endblock content%}
+{% endblock content %}

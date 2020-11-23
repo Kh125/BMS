@@ -1,11 +1,11 @@
 body{
   font-family: 'Share Tech Mono', monospace;
-  font-size: 20px;
-  outline: none
+  font-size: 20px !important;
+  outline: none;
 }
 
 body a{
-  outline: none
+  outline: none;
 }
 
 .sidebar-dash{
@@ -32,6 +32,57 @@ body a{
   font-family: 'Playfair Display SC', serif;
   font-size: 2.2rem;
 }
+
+.sec-title-font{
+  font-size: 28x;
+  color: black;
+}
+
+.left-nav li{
+  border: 1px solid black;
+  margin: 5px; 
+}
+
+.left-nav li a{
+  padding-left: 10px !important;
+}
+
+
+/* dashboard-style */
+
+.feature-item{
+  width: 400px;
+  background: #343a40;
+  -webkit-box-shadow: 0px 1px 6px 1px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 1px 6px 1px rgba(0,0,0,1);
+  box-shadow: 0px 1px 6px 1px rgba(0,0,0,1);
+}
+
+.header-text{
+  width: 100%;
+  height: 20px;
+  display: block;
+  background: white;
+
+}
+.img-content{
+  width: 100%;  
+  height: 200px;
+}
+
+.img-content img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.txt-content{
+  width: 100%;
+  height: 210px;
+  padding: 10px;
+}
+
+/* dashboard-style */
 
 /* carinfo */
 .setcar{
@@ -94,7 +145,6 @@ body a{
 	z-index: 1;		
 }
 .carinf button{
-	border:none;
 	box-shadow: none;
 	background: transparent;
 	border:2px solid #fff;		
@@ -112,7 +162,6 @@ body a{
 }
 .ahov:hover{
 	background: white;
-	/* background: rgb(255, 153, 0); */
 	color: rgb(0, 0, 0);
 	border:1px solid gold;
 }
@@ -148,6 +197,7 @@ a, a:hover, a:focus {
 }
 
 .nav-item .nav-link:hover{
+  cursor: pointer;
   color:#47748b !important;
 }
 
@@ -302,63 +352,21 @@ a.article, a.article:hover {
     margin: 5px auto;
 }
 
-
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
-@media (max-width: 768px) {
- 
-
-}
 /* sidebar */
 
 /* profile */
 
- .profile{
- overflow-x:hidden;
- overflow-y: auto;
- }
-
- .profile::-webkit-scrollbar-track
- {
- box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
- border-radius: 1px;
- background-color: #F5F5F5;
- }
-
- .profile::-webkit-scrollbar
- {
- width: 1px;
- background-color: #F5F5F5;
- }
-
- .profile::-webkit-scrollbar-thumb
- {
- border-radius: 1px;
- box-shadow: inset 0 0 6px rgba(0,0,0,.3);
- background-color: #555;
- }
-
-
- .profile{
- width: 380px;
- height: 800px;
- background: #fff;
- border-radius: 10px;
- margin: 0px auto;
- }
-
-
- .profilebox{
- width: 380px;
- height: 700px;
- background: #ebebeb;
- display: block;
- border: 1px solid black;
- color: grey;
- margin: 0px auto;
- border-radius: 10px;
- }
+.profilebox{
+  width: 380px;
+  display: block;
+  color: grey;
+  margin: 0px auto;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 3px 9px -4px rgba(0,0,0,0.67);
+  -moz-box-shadow: 0px 3px 9px -4px rgba(0,0,0,0.67);
+  box-shadow: 0px 3px 9px -4px rgba(0,0,0,0.67);
+  padding-bottom: 15px;
+}
 
 
 
@@ -429,11 +437,6 @@ a.article, a.article:hover {
  }
 
 
- .profile .hideprofiletable{
- display: none;
- }
-
-
  .profilecontent .showprofiletable{
  width: 100%;
  color: #222;
@@ -447,6 +450,7 @@ a.article, a.article:hover {
  margin: 0px auto;
  border-collapse: separate;
  border-spacing: 0 10px;
+ cursor: pointer;
  }
 
  .profilecontent .showprofiletable table tr{
@@ -499,7 +503,8 @@ a.article, a.article:hover {
  background: rgb(255, 236, 129);
  transition: 0.3s;
  }
-.profilesubmit, .profileback{
+
+.profilesubmit, .profileback,.profilesubmit-car, .profileback-car{
  width: 43%;
  margin: 0px auto;
  height: 45px;
@@ -507,32 +512,41 @@ a.article, a.article:hover {
  background: #fff;
  color: #222;
  border: 1px solid #222;
- border-radius: 5px;
- display:none;
+ border-radius: 5px; 
  margin-left: 11px;
 }
+.profilesubmit, .profileback{
+  display:none;
+}
 
-.profileback{
+.profileback,.profileback-car{
   margin-right: 11px;
   float: right;
  }
 
+.profilesubmit-car, .profileback-car{
+ margin-top: 10px;
+}
 
-.profilesubmit:hover, .profileback:hover{
+.profilesubmit:hover, .profileback:hover,.profilesubmit-car:hover, .profileback-car:hover{
  background: rgb(255, 236, 129);
  transition: 0.3s;
  }
 
  /*-----------------*/
 
- .hideprofiletable{
- width: 100%;
- color: black;
- margin: 0px auto;
- border: 1px solid black;
- border-radius: 10px;
- padding-bottom: 10px;
- }
+.hideprofiletable{
+  display: none;
+  width: 380px;
+  color: black;
+  margin: 0px auto;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  -webkit-box-shadow: 0px 3px 9px -4px rgba(0,0,0,0.67);
+  -moz-box-shadow: 0px 3px 9px -4px rgba(0,0,0,0.67);
+  box-shadow: 0px 3px 9px -4px rgba(0,0,0,0.67);
+  cursor: pointer;
+}
 
 
  .hideprofiletable table{
@@ -557,10 +571,11 @@ a.article, a.article:hover {
 
 
  .hideprofiletable table tr td:nth-child(1){
- border-top-left-radius: 10px;
- border-bottom-left-radius: 10px; 
- border-right: 0.5px solid grey;
- padding-left: 15px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px; 
+  border-right: 0.5px solid grey;
+  padding-left: 15px;
+  width: 40%;
  }
 
  .hideprofiletable table tr td:last-child{
@@ -577,131 +592,14 @@ a.article, a.article:hover {
  }
 
  
- .hideprofiletable .inputprofile{
- border: none;
- box-shadow: none;
- width: 95%;
- height:40px;
- margin: 0px auto;
- border-radius: 5px;
- padding-left: 15px;
- }
-
-
- 
-@media (min-width: 576px) {
-.profile{
- width: 450px;
- height: 800px;
- background: #fff;
- border-radius: 10px;
- margin: 0px auto;
- }
-
-
- .profilebox{
- width: 450px;
- height: 700px;
- background: #ebebeb;
- display: block;
- border: 1px solid black;
- color: grey;
- margin: 0px auto;
- border-radius: 10px;
- }
-
-}
-
-@media (min-width: 768px) {
-.profile{
- width: 450px;
- height: 800px;
- background: #fff;
- border-radius: 10px;
- margin: 0px auto;
- }
-
-
- .profilebox{
- width: 450px;
- height: 700px;
- background: #ebebeb;
- display: block;
- border: 1px solid black;
- color: grey;
- margin: 0px auto;
- border-radius: 10px;
- }
-
-}
-
-@media (min-width: 992px) {
-.profile{
- width: 450px;
- height: 800px;
- background: #fff;
- border-radius: 10px;
- margin: 0px auto;
- }
-
-
- .profilebox{
- width: 450px;
- height: 700px;
- background: #ebebeb;
- display: block;
- border: 1px solid black;
- color: grey;
- margin: 0px auto;
- border-radius: 10px;
- }
-
-}
-
-@media (min-width: 1200px) {
-.profile{
- width: 450px;
- height: 800px;
- background: #fff;
- border-radius: 10px;
- margin: 0px auto;
- }
-
-
- .profilebox{
- width: 450px;
- height: 700px;
- background: #ebebeb;
- display: block;
- border: 1px solid black;
- color: grey;
- margin: 0px auto;
- border-radius: 10px;
- }
-
-}
-
-@media (min-width: 1500px) {
-.profile{
- width: 450px;
- height: 800px;
- background: #fff;
- border-radius: 10px;
- margin: 0px auto;
- }
-
-
- .profilebox{
- width: 450px;
- height: 700px;
- background: #ebebeb;
- display: block;
- border: 1px solid black;
- color: grey;
- margin: 0px auto;
- border-radius: 10px;
- }
-
+.inputprofile{
+  border: none;
+  box-shadow: none;
+  width: 95%;
+  height:40px;
+  margin: 0px auto;
+  border-radius: 5px;
+  padding-left: 15px;
 }
 
  /*upload but*/
@@ -712,6 +610,8 @@ a.article, a.article:hover {
  overflow: hidden;
  margin: 0px auto;
  background:gold;
+ border-top-left-radius: 10px;
+ border-top-right-radius: 10px;
 }
 
  .upload-btn-wrapper .btn {
@@ -731,7 +631,7 @@ a.article, a.article:hover {
  margin-bottom: 30px;
  }
 
- .upload-btn-wrapper input[type=file] {
+ .upload-btn-wrapper .upload-photo {
  width: 150px;
  height: 150px;
  border-radius: 50%;
@@ -747,26 +647,6 @@ a.article, a.article:hover {
 
 
 /* profile */
-
-@media (min-width: 576px) {
-
-}
-
-@media (min-width: 768px) {
-
-}
-
-@media (min-width: 992px) {
-
-}
-
-@media (min-width: 1200px) {
-
-}
-
-@media (min-width: 1500px) {
-
-}
 
 .content{
   margin-top: 10px !important;
@@ -792,3 +672,292 @@ a.article, a.article:hover {
 }
 /* table */
 
+
+/* car-info */
+
+.showcarinfobox{
+  overflow-x:hidden;
+  overflow-y: auto;
+  width: 380px;
+  height: 500px;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px auto;
+  padding: 10px;
+  -webkit-box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.67);
+  -moz-box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.67);
+  box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.67);
+ }
+
+.showcarinfobox::-webkit-scrollbar-track{
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 1px;
+  background-color: #F5F5F5;
+ }
+
+ .showcarinfobox::-webkit-scrollbar
+ {
+ width: 1px;
+ background-color: #F5F5F5;
+ }
+
+ .showcarinfobox::-webkit-scrollbar-thumb
+ {
+ border-radius: 1px;
+ box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+ background-color: #555;
+ }
+
+.car-content{
+  width: 100%;
+  background: white;
+  margin: 0px auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.showcarinfobox .car-content table{
+  width: 95%;
+  height: 100%;
+  margin: 0px auto;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+ .showcarinfobox .car-content table tr{
+ width: 90%;
+ height: 50px;
+ margin: 0px auto;
+ background: rgb(255, 236, 129);
+ }
+
+ .showcarinfobox .car-content table tr:hover{
+ background: #ebebeb;
+ }
+
+ .showcarinfobox .car-content table tr td:nth-child(1){
+ border-top-left-radius: 10px;
+ border-bottom-left-radius: 10px; 
+ border-right: 0.5px solid grey;
+ padding-left: 15px;
+ }
+
+ .showcarinfobox .car-content table tr td:last-child{
+ border-top-right-radius: 10px;
+ border-bottom-right-radius: 10px; 
+ padding-left: 15px;
+ }
+
+ .car-back-button{
+ width: 95%;
+ height: 100px;
+ margin: 0px auto;
+ padding-top: 20px;
+ }
+
+.car-back{
+ width: 100%;
+ height: 50px;
+ box-shadow: none;
+ border-radius: 5px;
+ background: #fff;
+ color: #222;
+ border: 1px solid #222;
+ margin: 0px auto;
+ display: block;
+ }
+
+.car-back:hover{
+ background: rgb(255, 236, 129);
+ transition: 0.3s;
+ }
+	
+/* car-info */
+
+
+/* add-car */
+
+.photo-upload{
+  margin:10px;
+  margin-right: 0px;
+}
+
+.photo{
+  margin: 10px;
+}
+
+
+
+/* add-car */
+
+
+/* MEDIAQUERY */
+
+
+@media (min-width: 576px) {
+
+.hideprofiletable{
+  width: 450px;
+}
+
+ .profilebox{
+ width: 450px;
+ display: block;
+ color: grey;
+ margin: 0px auto;
+ border-radius: 10px;
+ }
+
+ .showcarinfobox{
+  width: 450px;
+  height: 500px;
+ }
+
+.feature-item{
+  width: 450px;  
+}
+}
+
+@media (min-width: 646px) {
+
+.feature-item{
+  width: 600px;  
+}
+}
+
+@media (min-width: 768px) {
+
+.feature-item{
+  width: 370px;  
+}
+
+.hideprofiletable{
+  width: 450px;
+}
+
+ .profilebox{
+ width: 450px;
+ display: block;
+ color: grey;
+ margin: 0px auto;
+ border-radius: 10px;
+ }
+
+}
+
+@media (min-width: 834px) {
+
+.feature-item{
+  width: 400px;  
+}
+}
+
+@media (min-width: 905px) {
+
+.feature-item{
+  width: 420px;  
+}
+}
+
+@media (min-width: 926px) {
+
+.feature-item{
+  width: 430px;  
+}
+}
+
+@media (min-width: 992px) {
+
+.feature-item{
+  width: 450px;  
+}
+
+.hideprofiletable{
+  width: 450px;
+}
+
+ .profilebox{
+ width: 450px;
+ display: block;
+ color: grey;
+ margin: 0px auto;
+ border-radius: 10px;
+ }
+
+}
+
+@media (min-width: 1104px) {
+
+.feature-item{
+  width: 500px; 
+}
+}
+
+
+@media (min-width: 1200px) {
+
+.feature-item{
+  width: 530px;  
+}
+
+.hideprofiletable{
+  width: 450px;
+}
+
+ .profilebox{
+ width: 450px;
+ display: block;
+ color: grey;
+ margin: 0px auto;
+ border-radius: 10px;
+ }
+
+}
+
+@media (min-width: 1268px) {
+
+.feature-item{
+  width: 580px; 
+}
+}
+
+@media (min-width: 1290px) {
+
+.feature-item{
+  width: 600px; 
+}
+}
+
+
+@media (min-width: 1370px) {
+
+.feature-item{
+  width: 640px;  
+}
+
+}
+
+@media (min-width: 1500px) {
+
+.feature-item{
+  width: 700px;  
+}
+
+.hideprofiletable{
+  width: 450px;
+}
+
+ .profilebox{
+ width: 450px;
+ display: block;
+ color: grey;
+ margin: 0px auto;
+ border-radius: 10px;
+ }
+
+ .showcarinfobox{
+  width: 450px;
+  height: 500px;
+ }
+}
+/* MEDIAQUERY */
