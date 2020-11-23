@@ -25,9 +25,9 @@ def feedback():
 
 @main.route("/login",methods=['GET','POST'])
 def login():
-  if current_user.is_authenticated:
-    flash(f'Already authenticated','danger')
-    return redirect(url_for('main.home'))
+  # if current_user.is_authenticated:
+  #   flash(f'Already authenticated','danger')
+  #   return redirect(url_for('main.home'))
   forms = LoginForm()
   if forms.validate_on_submit():
     user = User.query.filter_by(email=forms.email.data).first()
@@ -44,9 +44,9 @@ def login():
 
 @main.route("/register",methods=['GET','POST'])
 def register():
-  if current_user.is_authenticated:
-    flash(f'Already authenticated','danger')
-    return redirect(url_for('main.home'))
+  # if current_user.is_authenticated:
+  #   flash(f'Already authenticated','danger')
+  #   return redirect(url_for('main.home'))
   forms = RegisterForm()
   if forms.validate_on_submit():  
     if request.form.get('check_type') == '1':
