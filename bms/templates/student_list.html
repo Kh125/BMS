@@ -1,0 +1,250 @@
+{% extends 'dashboard_layout.html' %}
+{% block style %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bulma.min.css">  
+{% endblock style %}
+{% block content %}          
+  <div class="table-data container table-container">    
+    <div class="btn-group">
+      <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:white;border:1px solid grey;width:175px;">
+        Adjust Column
+      </button>
+      <div class="dropdown-menu">
+          <a class="toggle-vis dropdown-item" data-column="0" style="background:white;">Name</a>
+          <hr class="dropdown-divider">
+          <a class="toggle-vis dropdown-item" data-column="1" style="background:white;">Age</a>
+          <hr class="dropdown-divider">
+          <a class="toggle-vis dropdown-item" data-column="2" style="background:white;">Grade</a>
+          <hr class="dropdown-divider">
+          <a class="toggle-vis dropdown-item" data-column="3" style="background:white;">Address</a>
+          <hr class="dropdown-divider">
+          <a class="toggle-vis dropdown-item" data-column="4" style="background:white;">Salary Status</a>          
+      </div>
+    </div>
+    <table id="example" class="table is-bordered" width="100%">
+      <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th> 
+                <th>Grade</th>                
+                <th>Address</th>
+                <th>Salary Status</th>         
+            </tr>
+        </thead>
+        <tbody>          
+            <tr>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>                
+            </tr>     
+            <tr>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>                
+            </tr>     
+            <tr>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>                
+            </tr>     
+            <tr>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>                
+            </tr>     
+            <tr>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>                
+            </tr>     
+            <tr>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>                
+            </tr>     
+            <tr>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>                
+            </tr>     
+            <tr>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>                
+            </tr>     
+            <tr>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>                
+            </tr>     
+            <tr>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>                
+            </tr>     
+            <tr>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>
+                <td>                  
+                  N/A                                    
+                </td>                
+            </tr>         
+        </tbody>       
+    </table>
+  </div>
+  <div class="mx-auto container">
+  <small class="text-muted text-center">Updated at 12.4.20 10:54 +GMT</small>
+  </div>
+{% endblock content %}  
+{% block script %}    
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bulma.min.js"></script>
+
+    
+    <script>      
+      $jq=jQuery.noConflict();     
+      $jq(document).ready(function() {
+          var table = $jq('#example').DataTable( {
+              "scrollX": true,    
+              "lengthMenu": [ 5, 10, 25, 50, 75, 100 ]  
+          });
+          $jq('a.toggle-vis').on('click',function(e){
+              e.preventDefault();      
+              // Get the column API object              
+              var column = table.column($jq(this).attr('data-column'));      
+              // Toggle the visibility
+              column.visible(!column.visible());              
+          });
+      });
+    </script>
+{% endblock script %}

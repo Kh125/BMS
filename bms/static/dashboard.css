@@ -179,7 +179,7 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background:rgb(141, 173, 22);
+    background:gold;
 }
 
 #sidebar ul.components {
@@ -307,32 +307,7 @@ a.article, a.article:hover {
     MEDIAQUERIES
 ----------------------------------------------------- */
 @media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
-    }
-    #sidebar.active {
-        margin-left: 0;
-        transform: none;
-    }
-    #sidebarCollapse span:first-of-type,
-    #sidebarCollapse span:nth-of-type(2),
-    #sidebarCollapse span:last-of-type {
-        transform: none;
-        opacity: 1;
-        margin: 5px auto;
-    }
-    #sidebarCollapse.active span {
-        margin: 0 auto;
-    }
-    #sidebarCollapse.active span:first-of-type {
-        transform: rotate(45deg) translate(2px, 2px);
-    }
-    #sidebarCollapse.active span:nth-of-type(2) {
-        opacity: 0;
-    }
-    #sidebarCollapse.active span:last-of-type {
-        transform: rotate(-45deg) translate(1px, -1px);
-    }
+ 
 
 }
 /* sidebar */
@@ -548,18 +523,12 @@ a.article, a.article:hover {
  transition: 0.3s;
  }
 
-
-
  /*-----------------*/
-
-
-
 
  .hideprofiletable{
  width: 100%;
  color: black;
  margin: 0px auto;
- background: #ebebeb;
  border: 1px solid black;
  border-radius: 10px;
  padding-bottom: 10px;
@@ -803,4 +772,23 @@ a.article, a.article:hover {
   margin-top: 10px !important;
 }
 
+/* table */
+
+.select:not(.is-multiple):not(.is-loading)::after {
+
+    border-color:transparent;
+    right: 1.125em;
+    z-index: 4;
+    display: none;
+}
+
+#example_ellipsis{
+  pointer-events: none;
+}
+
+.is-one-half{
+  padding-top: 10px !important;
+  margin-top: 10px !important;
+}
+/* table */
 

@@ -114,3 +114,36 @@
     </div>
 </div>        
 {% endblock content%}
+{% block script %}
+<script>
+        $jq=jQuery.noConflict(); 
+        $jq('.profilenext').click(function(){
+          $jq('.profilesubmit').show();
+          $jq('.profileback').show();
+          $jq('.profilebox').hide();
+          $jq('.hideprofiletable').show();
+          $jq('.profilenext').hide();
+        });
+
+        $jq('.profileback').click(function(){
+          $jq('.profilesubmit').hide();
+          $jq('.profileback').hide();
+          $jq('.profilebox').show();
+          $jq('.hideprofiletable').hide();
+          $jq('.profilenext').show();
+        });
+
+
+        $jq('.profilenext').on("click",function(e){
+          e.preventDefault();
+        });
+
+        $jq('.profileback').on("click",function(e){
+            e.preventDefault();
+        });
+
+        $jq('.backbut').click(function(){
+            e.preventDefault();
+        }); 
+</script>
+{% endblock script %}

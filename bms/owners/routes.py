@@ -18,3 +18,11 @@ def owner_profile():
     flash(f'You can\'t access this page','danger')
     return redirect(url_for('parents.parent_dash'))
   return render_template('owner_profile.html',title = 'Profile')
+
+@owners.route("/owner/student-list")
+@login_required
+def student_list():
+  if current_user.usertype == 0:
+    flash(f'You can\'t access this page','danger')
+    return redirect(url_for('parents.parent_dash'))
+  return render_template('student_list.html',title = 'Student List')
