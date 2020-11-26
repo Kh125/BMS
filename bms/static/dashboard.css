@@ -52,6 +52,7 @@ body a{
 
 .feature-item{
   width: 400px;
+  height: auto;
   background: #343a40;
   -webkit-box-shadow: 0px 1px 6px 1px rgba(0,0,0,1);
   -moz-box-shadow: 0px 1px 6px 1px rgba(0,0,0,1);
@@ -78,101 +79,29 @@ body a{
 
 .txt-content{
   width: 100%;
-  height: 210px;
   padding: 10px;
+  color: #fff;
+}
+
+
+.view-box{
+  display: block;
+  height: 60px;
+}
+
+
+.feature-a{
+  float: right;
 }
 
 /* dashboard-style */
-
-/* carinfo */
-.setcar{
-	width: 230px;
-	height: 280px;
-	background: gold;
-	margin:0px auto;
-	border-radius:10px;
-}
-.setcarcov{
-	margin-bottom: 50px;
-}
-.carinfocontent{
-	position: relative;
-}
-.hidecardel{
-		display: none;
-		color: red;
-		font-size: 25px;
-		position: absolute;
-		margin-top: -37px;
-}
-
-.hidecardel a{
-	color: red;
-}
-
-.hidecaredit{
-	display: none;
-	color: red;
-	font-size: 25px;
-	position: absolute;
-	margin-top: -37px;
-}
-
-.hidecaredit a{
-	/* color: green; */
-	color: rgb(255, 183, 0);
-}
-
-.img {
-	margin: 0px auto;	
-	width: 250px;
-	z-index: 999;
-}
-
-.img img{	
-	width: 250px;
-	height: 250px;
-	margin: 0px;
-	padding: 0px;
-}
-.carinf{
-	display: block;
-	width: 100%;
-	height: 100px;
-	padding: 20px;
-	margin: 0px auto;
-	position: relative;
-	z-index: 1;		
-}
-.carinf button{
-	box-shadow: none;
-	background: transparent;
-	border:2px solid #fff;		
-	border-radius: 5px;
-}
-
-.carinf button:hover{
-	border:1px solid #fff;
-	cursor: pointer;
-}
-
-.carinf label{
-	font-size: 21px;
-	font-weight: bold;
-}
-.ahov:hover{
-	background: white;
-	color: rgb(0, 0, 0);
-	border:1px solid gold;
-}
-/* carinfo */
 
 /* sidebar */
 p{
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #999;
+    /* color: #999; */
 }
 
 a, a:hover, a:focus {
@@ -772,6 +701,32 @@ a.article, a.article:hover {
  transition: 0.3s;
  }
 	
+
+#hidecar-overlay{
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 253, 253, 0.86);
+  z-index: 2; 
+  cursor: pointer; 
+}
+
+
+
+.overlay-car-edit{
+  position: absolute;  
+  margin-top: 450px !important;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  background: white;
+  backdrop-filter: blur(8px);
+}
 /* car-info */
 
 
@@ -786,15 +741,88 @@ a.article, a.article:hover {
   margin: 10px;
 }
 
-
-
 /* add-car */
+
+/* car-list */
+
+.car-info-box{
+  width: 380px;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  margin: 0px auto;
+  -webkit-box-shadow: 0px 1px 6px 1px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 1px 6px 1px rgba(0,0,0,1);
+  box-shadow: 0px 1px 6px 1px rgba(0,0,0,1);
+  margin-bottom: 65px;
+}
+
+
+.car-img-left-box{
+  width: 45%;
+}
+
+.car-img-left-box img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content-right-box{
+  width: 60%;
+}
+
+.car-over-box{
+  height: 140px;
+  padding: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.car-over-box p {
+  display: inline;
+  white-space: nowrap;
+  line-height: 3.2rem !important;
+}
+
+
+/* car-list */
+
+
+/* salary-list */
+
+
+.salary-content{
+  -webkit-box-shadow: 0px 0px 13px 3px rgba(221,221,221,1);
+  -moz-box-shadow: 0px 0px 13px 3px rgba(221,221,221,1);
+  box-shadow: 0px 0px 13px 3px rgba(221,221,221,1) !important;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+
+.table-mod tbody tr:hover{
+  background: #ebebeb;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.but-page-change{
+  
+}
+
+/* salary-list */
+
+
 
 
 /* MEDIAQUERY */
 
 
 @media (min-width: 576px) {
+
+.car-info-box{
+  width: 400px;
+}
 
 .hideprofiletable{
   width: 450px;
@@ -820,12 +848,20 @@ a.article, a.article:hover {
 
 @media (min-width: 646px) {
 
+.car-info-box{
+  width: 400px;
+}
+
 .feature-item{
   width: 600px;  
 }
 }
 
 @media (min-width: 768px) {
+
+.car-info-box{
+  width: 310px;
+}
 
 .feature-item{
   width: 370px;  
@@ -847,12 +883,20 @@ a.article, a.article:hover {
 
 @media (min-width: 834px) {
 
+.car-info-box{
+  width: 380px;
+}
+
 .feature-item{
   width: 400px;  
 }
 }
 
 @media (min-width: 905px) {
+
+.car-info-box{
+  width: 380px;
+}
 
 .feature-item{
   width: 420px;  
@@ -861,12 +905,19 @@ a.article, a.article:hover {
 
 @media (min-width: 926px) {
 
+
 .feature-item{
   width: 430px;  
 }
 }
 
 @media (min-width: 992px) {
+
+
+.car-info-box{
+  width: 315px;
+}
+
 
 .feature-item{
   width: 450px;  
@@ -886,8 +937,14 @@ a.article, a.article:hover {
 
 }
 
-@media (min-width: 1104px) {
 
+@media (min-width: 1040px) {
+.car-info-box{
+  width: 330px;
+}
+}
+
+@media (min-width: 1104px) {
 .feature-item{
   width: 500px; 
 }
@@ -922,6 +979,10 @@ a.article, a.article:hover {
 }
 
 @media (min-width: 1290px) {
+
+.car-info-box{
+  width: 415px;
+}
 
 .feature-item{
   width: 600px; 

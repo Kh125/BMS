@@ -4,7 +4,7 @@ from flask_login import current_user,login_required
 owners = Blueprint('owners',__name__)
 
 @owners.route("/owner")
-# @login_required
+@login_required
 def owner_dash():
   if current_user.usertype == 0:
     flash(f'You can\'t access this page','danger')
@@ -34,6 +34,24 @@ def student_list():
     flash(f'You can\'t access this page','danger')
     return redirect(url_for('parents.parent_dash'))
   return render_template('student_list.html',title = 'Student List')
+
+@owners.route("/owner/salary-list")
+@login_required
+def salary_list():
+  if current_user.usertype == 0:
+    flash(f'You can\'t access this page','danger')
+    return redirect(url_for('parents.parent_dash'))
+  return render_template('salary_list.html',title = 'Salary List')
+
+@owners.route("/owner/school-list")
+@login_required
+def school_list():
+  if current_user.usertype == 0:
+    flash(f'You can\'t access this page','danger')
+    return redirect(url_for('parents.parent_dash'))
+  return render_template('school_list.html',title = 'School List')
+
+
 
 @owners.route("/owner/car-info")
 @login_required

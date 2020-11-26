@@ -1,34 +1,36 @@
 {% extends 'dashboard_layout.html' %}
 {% block li %}
 <li class="nav-item">
-  <a class="nav-link mr-2" style="color:black;">
+  <a class="nav-link mr-2" style="color:black;" onclick="on()">
     <span class="icon icon-plus"></span>
     Add
   </a>
 </li> 
-<li class="nav-item">
-  <a class="nav-link mr-2" style="color:black;">
+<!-- <li class="nav-item">
+  <a id="edit-button" class="nav-link mr-2" style="color:black;" onclick="edit()">
     <span class="icon icon-note"></span>
     Edit
   </a>
 </li> 
 <li class="nav-item">
-  <a class="nav-link mr-2" style="color:black;">
+  <a id="remove-button" class="nav-link mr-2" style="color:black;" onclick="del()">
     <span class="icon icon-minus"></span>
     Remove
   </a>
-</li> 
+</li>  -->
 {% endblock li %}
-{% block content %}
+{% block breadcrumb %}
 <nav aria-label="breadcrumb" style="margin-top:-39px;">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{{ url_for('owners.owner_dash') }}" style="font-size: 20px;
-  color: black;">Dashboard</a></li>
+    <li class="breadcrumb-item"><a href="{{ url_for('owners.owner_dash') }}" style="font-size: 20px;color: black;">Dashboard</a></li>
     <li class="breadcrumb-item active" aria-current="page" style="font-size: 20px;">Car List</li>
   </ol>
-</nav>    
+</nav>  
+{% endblock breadcrumb %}
+{% block content %}  
+  <div id="hidecar-overlay">
       <!-- hidden box for adding new car -->
-      <div class="hideprofiletable">
+      <div class="hideprofiletable overlay-car-edit" style="display:block;">
 			    <table>
             <tr style="background:transparent;">
               <td style="border:none;">
@@ -104,123 +106,190 @@
           <div class="photo p-2 border">
             <input type="file" class="photo-upload">  
           </div>    
-          <button class="profileback-car">Back</button>
+          <button class="profileback-car" onclick="off()">Back</button>
           <button class="profilesubmit-car">Save</button>
       </div>
       <!-- hidden box for adding new car -->
+  </div>
 <!-- list for all register-car -->
-<div class="show-all-car">
+<div class="show-all-car mt-4">
   <div class="row">
-    <div class="col-sm-12 col-lg-3 col-md-4 setcarcov">
-      <div class="setcar">
-        <div class="carinfocontent">
-          <span class="hidecardel"><a href=""><i class="fa fa-times-circle"></i></a></span>
-          <span class="hidecaredit"><a href=""><i class="fa fa-edit"></i></a></span>
-
-          <div class="img">
-            <img src="{{ url_for('static',filename='images/ferryschool.jpg') }}" style="width: 230px;height: 150px;border-top-left-radius:10px;border-top-right-radius:10px;" data-lity>
-          </div> 
-
-          <div class="carinf">    
-            <label class="carlab" style="font-size:19px;">
-              Car Model
-            </label>
-            <button class="carlab ahov" style="color: black;">
-              <a href="">More</a>
-            </button>
-          </div>
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-12 col-lg-3 col-md-4 setcarcov">
-      <div class="setcar">
-        <div class="carinfocontent">
-          <span class="hidecardel"><a href=""><i class="fa fa-times-circle"></i></a></span>
-          <span class="hidecaredit"><a href=""><i class="fa fa-edit"></i></a></span>
-
-          <div class="img">
-            <img src="{{ url_for('static',filename='images/ferryschool.jpg') }}" style="width: 230px;height: 150px;border-top-left-radius:10px;border-top-right-radius:10px;" data-lity>
-          </div> 
-
-          <div class="carinf">    
-            <label class="carlab" style="font-size:19px;">
-              Car Model
-            </label>
-            <button class="carlab ahov" style="color: black;">
-              <a href="">More</a>
-            </button>
-          </div>
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-12 col-lg-3 col-md-4 setcarcov">
-      <div class="setcar">
-        <div class="carinfocontent">
-          <span class="hidecardel"><a href=""><i class="fa fa-times-circle"></i></a></span>
-          <span class="hidecaredit"><a href=""><i class="fa fa-edit"></i></a></span>
-
-          <div class="img">
-            <img src="{{ url_for('static',filename='images/ferryschool.jpg') }}" style="width: 230px;height: 150px;border-top-left-radius:10px;border-top-right-radius:10px;" data-lity>
-          </div> 
-
-          <div class="carinf">    
-            <label class="carlab" style="font-size:19px;">
-              Car Model
-            </label>
-            <button class="carlab ahov" style="color: black;">
-              <a href="">More</a>
-            </button>
-          </div>
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-12 col-lg-3 col-md-4 setcarcov">
-      <div class="setcar">
-        <div class="carinfocontent">
-          <span class="hidecardel"><a href=""><i class="fa fa-times-circle"></i></a></span>
-          <span class="hidecaredit"><a href=""><i class="fa fa-edit"></i></a></span>
-
-          <div class="img">
-            <img src="{{ url_for('static',filename='images/ferryschool.jpg') }}" style="width: 230px;height: 150px;border-top-left-radius:10px;border-top-right-radius:10px;" data-lity>
-          </div> 
-
-          <div class="carinf">    
-            <label class="carlab" style="font-size:19px;">
-              Car Model
-            </label>
-            <button class="carlab ahov" style="color: black;">
-              <a href="">More</a>
-            </button>
-          </div>
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-12 col-lg-3 col-md-4 setcarcov">
-      <div class="setcar">
-        <div class="carinfocontent">
-          <span class="hidecardel"><a href=""><i class="fa fa-times-circle"></i></a></span>
-          <span class="hidecaredit"><a href=""><i class="fa fa-edit"></i></a></span>
-
-          <div class="img">
-            <img src="{{ url_for('static',filename='images/ferryschool.jpg') }}" style="width: 230px;height: 150px;border-top-left-radius:10px;border-top-right-radius:10px;" data-lity>
-          </div> 
-
-          <div class="carinf">    
-            <label class="carlab" style="font-size:19px;">
-              Car Model
-            </label>
-            <button class="carlab ahov" style="color: black;">
-              <a href="">More</a>
-            </button>
-          </div>
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
         </div>
       </div>
     </div>
+
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+        </div>
+      </div>
+    </div>
+    
   </div>
 </div>
 <!-- list for all register-car -->
 {% endblock content%}
+
+
+{% block script %}
+<script>
+  function on() {
+  document.getElementById("hidecar-overlay").style.display = "block";
+  document.getElementsByTagName("body")[0].style.overflowY = 'hidden';
+}
+
+function off() {
+  document.getElementById("hidecar-overlay").style.display = "none";
+  document.getElementsByTagName("body")[0].style.overflowY = 'auto';
+}
+
+function del(){
+  var visible = document.getElementsByClassName("event-button-delete").style.display;
+  if(visible != "block"){
+    document.getElementsByClassName("event-button-delete").style.display = "block"; 
+    document.getElementById("remove-button").innerHTML = "Undo"; 
+  }
+  else{
+    document.getElementsByClassName("event-button-delete").style.display = "none";  
+    document.getElementById("remove-button").innerHTML = "<span class=\"icon icon-minus\"></span>Remove"; 
+  }  
+}
+
+function edit(){
+  var visible = document.getElementsByClassName("event-button-edit").style.display;
+  if(visible != "block"){
+    document.getElementsByClassName("event-button-edit").style.display = "block"; 
+    document.getElementById("edit-button").innerHTML = "Undo"; 
+  }
+  else{
+    document.getElementsByClassName("event-button-edit").style.display = "none";  
+    document.getElementById("edit-button").innerHTML = "<span class=\"icon icon-note\"></span>Edit"; 
+  }  
+}
+</script>
+{% endblock script %}

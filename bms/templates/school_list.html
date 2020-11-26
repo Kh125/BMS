@@ -1,4 +1,12 @@
 {% extends 'layout.html' %}
+{% block breadcrumb %}
+<nav aria-label="breadcrumb" style="margin-top:-39px;">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('owners.owner_dash') }}" style="font-size: 20px;color: black;">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page" style="font-size: 20px;">School List</li>
+  </ol>
+</nav>
+{% endblock breadcrumb %}
 {% block content %}
 <div class="portfolio p-4">
     <div class="container">

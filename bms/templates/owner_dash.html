@@ -10,10 +10,12 @@
           <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
         </div>
         <div class="txt-content">
-        <p class="title-font m-0 ml-2"><i class="fas fa-bus-alt"></i> &nbsp;&nbsp;Car List</p>
-        <p class="ml-2">Here is the list of your car running on our System</p>
-        <a href="{{ url_for('owners.car_list') }}" class="ml-2 p-2 pl-3 pr-3 bg-white text-dark">View</a>
+          <p class="title-font m-0 ml-2"><i class="fas fa-bus-alt"></i> &nbsp;&nbsp;Car List</p>
+          <p class="ml-2 mb-4">Here is the list of your car running on our System</p>          
         </div>     
+        <div class="view-box">
+          <a href="{{ url_for('owners.car_list') }}" class="feature-a mr-3 p-2 pl-3 pr-3 bg-white text-dark mb-4">View</a>
+        </div>
       </div>
     </div>
 
@@ -25,10 +27,12 @@
           <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
         </div>
         <div class="txt-content">
-        <p class="title-font m-0 ml-2"><i class="fas fa-users"></i>&nbsp;&nbsp;Student List</p>
-        <p class="ml-2">Here is the list of your student taking your services</p>
-        <a href="{{ url_for('owners.student_list') }}" class="ml-2 p-2 pl-3 pr-3 bg-white text-dark">View</a>
-        </div>     
+          <p class="title-font m-0 ml-2"><i class="fas fa-users"></i>&nbsp;&nbsp;Student List</p>
+          <p class="ml-2 mb-4">Here is the list of your student taking your services</p>        
+        </div>   
+        <div class="view-box">  
+          <a href="{{ url_for('owners.student_list') }}" class="feature-a mr-3 p-2 pl-3 pr-3 bg-white text-dark mb-4">View</a>
+        </div>
       </div>
     </div>
 
@@ -40,10 +44,12 @@
           <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
         </div>
         <div class="txt-content">
-        <p class="title-font m-0 ml-2"><i class="fas fa-wallet"></i>&nbsp;&nbsp;Salary List</p>
-        <p class="ml-2">Your salary income and expense</p>
-        <a href="#" class="ml-2 p-2 pl-3 pr-3 bg-white text-dark">View</a>
-        </div>     
+          <p class="title-font m-0 ml-2"><i class="fas fa-wallet"></i>&nbsp;&nbsp;Salary List</p>
+          <p class="ml-2 mb-4">Your salary income and expense</p>        
+        </div>   
+        <div class="view-box">  
+          <a href="{{ url_for('owners.salary_list') }}" class="feature-a mr-3 p-2 pl-3 pr-3 bg-white text-dark mb-4">View</a>
+        </div>
       </div>
     </div>    
   </div>
