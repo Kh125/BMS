@@ -33,33 +33,25 @@
       <div class="hideprofiletable overlay-car-edit" style="display:block;">
 			    <table>
             <tr style="background:transparent;">
-              <td style="border:none;">
-                <div class="btn-group">
-                  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:130px">
-                    School
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item">Sanchaung</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item">Hlaing</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item">Mayangon</a>                                  
-                  </div>
-                </div>
-              </td>
               <td>
-                <div class="btn-group">
-                  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:130px">
-                    Time
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item">Morning</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item">Afternoon</a>
-                  </div>
-                </div>
+                <select class="custom-select" style="margin-left:-10px;">
+                  <option>School-1</option>
+                  <option>School-1</option>
+                  <option>School-1</option>
+                  <option>School-1</option>
+                  <option>School-1</option>
+                  <option>School-1</option>
+                  <option>School-1</option>
+                  <option>School-1</option>                  
+                </select>
+              </td>        
+              <td>
+                <select class="custom-select">
+                  <option value="1">Morning</option>
+                  <option value="2">Afternoon</option>
+                </select>
               </td>
-            </tr>            
+            </tr>                     
             <tr>
               <td> 
               <i class="fab fa-modx">&nbsp;&nbsp;&nbsp;</i>Model&nbsp;&nbsp;
@@ -126,7 +118,7 @@
             <p class="pt-3 pb-3"></p>  
             <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
           </div>                    
-          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+          <a href="{{ url_for('owners.car_info')}}" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
         </div>
       </div>
     </div>
@@ -143,7 +135,7 @@
             <p class="pt-3 pb-3"></p>  
             <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
           </div>                    
-          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+          <a href="{{ url_for('owners.car_info')}}" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
         </div>
       </div>
     </div>
@@ -160,7 +152,7 @@
             <p class="pt-3 pb-3"></p>  
             <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
           </div>                    
-          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+          <a href="{{ url_for('owners.car_info')}}" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
         </div>
       </div>
     </div>
@@ -177,7 +169,7 @@
             <p class="pt-3 pb-3"></p>  
             <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
           </div>                    
-          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+          <a href="{{ url_for('owners.car_info')}}" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
         </div>
       </div>
     </div>
@@ -194,7 +186,7 @@
             <p class="pt-3 pb-3"></p>  
             <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
           </div>                    
-          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+          <a href="{{ url_for('owners.car_info')}}" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
         </div>
       </div>
     </div>
@@ -211,7 +203,7 @@
             <p class="pt-3 pb-3"></p>  
             <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
           </div>                    
-          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+          <a href="{{ url_for('owners.car_info')}}" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
         </div>
       </div>
     </div>
@@ -228,7 +220,7 @@
             <p class="pt-3 pb-3"></p>  
             <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
           </div>                    
-          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+          <a href="{{ url_for('owners.car_info')}}" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
         </div>
       </div>
     </div>
@@ -245,7 +237,7 @@
             <p class="pt-3 pb-3"></p>  
             <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
           </div>                    
-          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+          <a href="{{ url_for('owners.car_info')}}" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
         </div>
       </div>
     </div>
@@ -267,6 +259,7 @@ function off() {
   document.getElementById("hidecar-overlay").style.display = "none";
   document.getElementsByTagName("body")[0].style.overflowY = 'auto';
 }
+
 
 function del(){
   var visible = document.getElementsByClassName("event-button-delete").style.display;
@@ -291,5 +284,6 @@ function edit(){
     document.getElementById("edit-button").innerHTML = "<span class=\"icon icon-note\"></span>Edit"; 
   }  
 }
+
 </script>
 {% endblock script %}

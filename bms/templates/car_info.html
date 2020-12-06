@@ -1,7 +1,9 @@
 {% extends 'dashboard_layout.html' %}
 {% block content %}
-      <div class="showcarinfobox">
-        <p class="text-left ml-3 sec-title-font">Car Information</p>                              
+  <div class="row">
+    <div class="col-12 col-md-12 col-lg-5 mb-4">
+        <div class="showcarinfobox">
+          <p class="text-left ml-3 sec-title-font">Car Information</p>                              
           <div class="car-content">
             <table>
               <tr>
@@ -47,10 +49,18 @@
             </table>
           </div>                 
           <div class="car-back-button">      
-            <button class="car-back" href="#">Back</button>
-          </div>         
+            <a href="{{ url_for('owners.car_list') }}">
+              <button class="car-back">Back</button>
+            </a>
+          </div>          
         </div>
-      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-7 mb-4">          
+      <div class="showmoreinfo-car">
+        <p class="text-left ml-3 sec-title-font">More</p>
+      </div>                          
+    </div>
+  </div>    
 {% endblock content %}
 {% block script %}
 <script>

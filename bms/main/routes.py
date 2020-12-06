@@ -2,9 +2,14 @@ from flask import Blueprint,render_template,redirect,flash,url_for,request
 from bms.main.forms import LoginForm,RegisterForm
 from bms.models import User
 from bms import db,bcrypt
-from flask_login import login_user,logout_user,current_user
+from flask_login import login_user,logout_user
 
 main = Blueprint('main',__name__)
+
+@main.route("/index")
+def auth_home():
+  return render_template('auth_home.html',title='Home')
+
 
 @main.route("/")
 @main.route("/home")

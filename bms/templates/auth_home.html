@@ -1,0 +1,295 @@
+{% extends 'dashboard_layout.html' %}
+{% block li %}
+<li class="nav-item">
+  <a class="nav-link mr-2" style="color:black;" onclick="on()">
+    <span class="icon icon-plus"></span>
+    Add
+  </a>
+</li> 
+<!-- <li class="nav-item">
+  <a id="edit-button" class="nav-link mr-2" style="color:black;" onclick="edit()">
+    <span class="icon icon-note"></span>
+    Edit
+  </a>
+</li> 
+<li class="nav-item">
+  <a id="remove-button" class="nav-link mr-2" style="color:black;" onclick="del()">
+    <span class="icon icon-minus"></span>
+    Remove
+  </a>
+</li>  -->
+{% endblock li %}
+{% block breadcrumb %}
+<nav aria-label="breadcrumb" style="margin-top:-39px;">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('owners.owner_dash') }}" style="font-size: 20px;color: black;">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page" style="font-size: 20px;">Car List</li>
+  </ol>
+</nav>  
+{% endblock breadcrumb %}
+{% block content %}  
+  <div id="hidecar-overlay">
+      <!-- hidden box for adding new car -->
+      <div class="hideprofiletable overlay-car-edit" style="display:block;">
+			    <table>
+            <tr style="background:transparent;">
+              <td style="border:none;">
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:130px">
+                    School
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item">Sanchaung</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item">Hlaing</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item">Mayangon</a>                                  
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="btn-group">
+                  <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:130px">
+                    Time
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item">Morning</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item">Afternoon</a>
+                  </div>
+                </div>
+              </td>
+            </tr>            
+            <tr>
+              <td> 
+              <i class="fab fa-modx">&nbsp;&nbsp;&nbsp;</i>Model&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="name" placeholder="eg. Honda Fit" class="inputprofile">
+              </td>
+            </tr>
+            <tr>
+              <td> 
+              <i class="fas fa-border-style">&nbsp;&nbsp;&nbsp;</i>Type&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="type" placeholder="eg. luxury" class="inputprofile">
+            </td>
+            </tr>
+
+            <tr>
+              <td> 
+              <i class="far fa-address-card">&nbsp;&nbsp;&nbsp;</i>Car No.
+              <b style="color:red"> *</b>&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="carno" placeholder="eg. AA-1111" class="inputprofile">
+              </td>
+            </tr>
+            <tr>
+              <td> 
+              <i class="fas fa-users">&nbsp;&nbsp;&nbsp;</i>No. of Passengers&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="nopassenger" placeholder="eg. 12" class="inputprofile">
+              </td>
+            </tr>          
+            <tr>
+              <td> 
+              <i class="fas fa-palette">&nbsp;&nbsp;&nbsp;</i>Color&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="color" placeholder="eg. Black" class="inputprofile">
+              </td>
+            </tr>                                                
+          </table>    
+          <div class="photo p-2 border">
+            <input type="file" class="photo-upload">  
+          </div>    
+          <button class="profileback-car" onclick="off()">Back</button>
+          <button class="profilesubmit-car">Save</button>
+      </div>
+      <!-- hidden box for adding new car -->
+  </div>
+<!-- list for all register-car -->
+<div class="show-all-car mt-4">
+  <div class="row">
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-lg-4 col-md-6">            
+      
+      <div class="car-info-box">        
+        <div class="car-img-left-box">
+          <img src="{{ url_for('static',filename='images/s3.jpg') }}" alt="Feature Item" class="img-responsive">
+        </div>
+        <div class="content-right-box">                    
+          <div class="car-over-box">
+            <p class=""><i class="fas fa-bus-alt pr-3 pl-3"></i>Toyota</p> 
+            <p class="pt-3 pb-3"></p>  
+            <p class=""><i class="fas fa-user pr-3 pl-3"></i>Aung Naing Khant hkdfjs sdfjsdfljs</p>
+          </div>                    
+          <a href="#" class="p-2 bg-dark text-white" style="float:right;">More<i class="fas fa-chevron-circle-right pl-3"></i></a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<!-- list for all register-car -->
+{% endblock content%}
+
+
+{% block script %}
+<script>
+  function on() {
+  document.getElementById("hidecar-overlay").style.display = "block";
+  document.getElementsByTagName("body")[0].style.overflowY = 'hidden';
+}
+
+function off() {
+  document.getElementById("hidecar-overlay").style.display = "none";
+  document.getElementsByTagName("body")[0].style.overflowY = 'auto';
+}
+
+function del(){
+  var visible = document.getElementsByClassName("event-button-delete").style.display;
+  if(visible != "block"){
+    document.getElementsByClassName("event-button-delete").style.display = "block"; 
+    document.getElementById("remove-button").innerHTML = "Undo"; 
+  }
+  else{
+    document.getElementsByClassName("event-button-delete").style.display = "none";  
+    document.getElementById("remove-button").innerHTML = "<span class=\"icon icon-minus\"></span>Remove"; 
+  }  
+}
+
+function edit(){
+  var visible = document.getElementsByClassName("event-button-edit").style.display;
+  if(visible != "block"){
+    document.getElementsByClassName("event-button-edit").style.display = "block"; 
+    document.getElementById("edit-button").innerHTML = "Undo"; 
+  }
+  else{
+    document.getElementsByClassName("event-button-edit").style.display = "none";  
+    document.getElementById("edit-button").innerHTML = "<span class=\"icon icon-note\"></span>Edit"; 
+  }  
+}
+</script>
+{% endblock script %}

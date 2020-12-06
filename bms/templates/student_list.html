@@ -3,6 +3,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bulma.min.css">  
 {% endblock style %}
+{% block li %}
+<li class="nav-item">
+  <a class="nav-link mr-2" style="color:black;" onclick="on()">
+    <span class="icon icon-plus"></span>
+    Add
+  </a>
+</li> 
+{% endblock li %}
 {% block breadcrumb %}
 <nav aria-label="breadcrumb" style="margin-top:-39px;">
   <ol class="breadcrumb">
@@ -11,7 +19,93 @@
   </ol>
 </nav>
 {% endblock breadcrumb %}
-{% block content %}         
+{% block content %}    
+  <div id="add-student-overlay">
+      <!-- hidden box for adding new car -->
+      <div class="hidestudenttable overlay-student-add" style="display:block;">
+			    <table>
+            <tr style="background:transparent;">
+              <td>
+                <select class="custom-select" style="margin-left:-10px;">
+                  <option>Grade-1</option>
+                  <option>Grade-2</option>
+                  <option>Grade-3</option>
+                  <option>Grade-4</option>
+                  <option>Grade-5</option>
+                  <option>Grade-6</option>
+                  <option>Grade-7</option>
+                  <option>Grade-8</option>
+                  <option selected>Grade-9</option>
+                  <option>Grade-10</option>
+                </select>
+              </td>        
+              <td style="padding-top:5.9px;">
+                <select class="custom-select">
+                  <option selected>Time</option>
+                  <option value="1">Morning</option>
+                  <option value="2">Afternoon</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td> 
+                <i class="fab fa-modx">&nbsp;&nbsp;&nbsp;</i>Student's Name&nbsp;&nbsp;
+                </td>              
+                <td>
+                <input type="text" name="studentname" placeholder="eg. Mg Hla" class="studentinputprofile">
+              </td>
+            </tr>                             
+            <tr>
+              <td> 
+              <i class="fab fa-modx">&nbsp;&nbsp;&nbsp;</i>Parent's Name&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="name" placeholder="eg. U Mya" class="studentinputprofile">
+              </td>
+            </tr>            
+
+            <tr>
+              <td> 
+              <i class="far fa-address-card">&nbsp;&nbsp;&nbsp;</i>Parent's NRC
+              <b style="color:red"> *</b>&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="parentnrc" placeholder="eg. 7/MANYANA(N)093432" class="studentinputprofile">
+              </td>
+            </tr>
+            <tr>
+              <td> 
+              <i class="fas fa-phone">&nbsp;&nbsp;&nbsp;</i>Parent's Phone&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="parentphone" placeholder="eg. 09324979343" class="studentinputprofile">
+              </td>
+            </tr>          
+            <tr>
+              <td> 
+              <i class="fas fa-envelope">&nbsp;&nbsp;&nbsp;</i>Parent's Email&nbsp;&nbsp;
+              </td>              
+              <td>
+              <input type="text" name="parentemail" placeholder="eg. umya@gmail.com" class="studentinputprofile">
+              </td>
+            </tr>      
+            <tr>
+              <td> 
+              <i class="fas fa-border-style">&nbsp;&nbsp;&nbsp;</i>Address&nbsp;&nbsp;
+              </td>              
+              <td>
+                <input type="text" name="parentaddress" placeholder="eg. No,Street,Block,Township" class="studentinputprofile">
+              </td>
+            </tr>                                          
+          </table>    
+          <div class="photo p-2 border">
+            <input type="file" class="photo-upload">  
+          </div>    
+          <button class="profileback-car" onclick="off()">Back</button>
+          <button class="profilesubmit-car">Save</button>
+      </div>
+      <!-- hidden box for adding new car -->
+  </div>
   <div class="table-data container table-container">    
     <div class="btn-group">
       <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:white;border:1px solid grey;width:175px;">
@@ -20,213 +114,309 @@
       <div class="dropdown-menu">
           <a class="toggle-vis dropdown-item" data-column="0" style="background:white;">Name</a>
           <hr class="dropdown-divider">
-          <a class="toggle-vis dropdown-item" data-column="1" style="background:white;">Age</a>
+          <a class="toggle-vis dropdown-item" data-column="1" style="background:white;">Phone</a>
           <hr class="dropdown-divider">
-          <a class="toggle-vis dropdown-item" data-column="2" style="background:white;">Grade</a>
+          <a class="toggle-vis dropdown-item" data-column="2" style="background:white;">Email</a>
           <hr class="dropdown-divider">
           <a class="toggle-vis dropdown-item" data-column="3" style="background:white;">Address</a>
           <hr class="dropdown-divider">
-          <a class="toggle-vis dropdown-item" data-column="4" style="background:white;">Salary Status</a>          
+          <a class="toggle-vis dropdown-item" data-column="4" style="background:white;">Edit</a> 
+          <hr class="dropdown-divider">
+          <a class="toggle-vis dropdown-item" data-column="5" style="background:white;">Remove</a>          
       </div>
     </div>
     <table id="example" class="table is-bordered" width="100%">
       <thead>
             <tr>
                 <th>Name</th>
-                <th>Age</th> 
-                <th>Grade</th>                
+                <th>Phone</th> 
+                <th>Email</th>                
                 <th>Address</th>
-                <th>Salary Status</th>         
+                <th>Edit</th>  
+                <th>Remove</th>                        
             </tr>
         </thead>
         <tbody>          
             <tr>
                 <td>                  
-                  N/A                                    
+                  Mike                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  09349283742                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  mike@gmail.com                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  Yangon,South Oakalarpa                               
+                </td>                
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
                 </td>
                 <td>                  
-                  N/A                                    
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
                 </td>                
             </tr>     
             <tr>
                 <td>                  
-                  N/A                                    
+                  Mike                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  09349283742                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  mike@gmail.com                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  Yangon,South Oakalarpa                               
+                </td>                
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
                 </td>
                 <td>                  
-                  N/A                                    
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
                 </td>                
             </tr>     
             <tr>
                 <td>                  
-                  N/A                                    
+                  Mike                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  09349283742                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  mike@gmail.com                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  Yangon,South Oakalarpa                               
+                </td>                
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
                 </td>
                 <td>                  
-                  N/A                                    
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
                 </td>                
             </tr>     
             <tr>
                 <td>                  
-                  N/A                                    
+                  Mike                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  09349283742                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  mike@gmail.com                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  Yangon,South Oakalarpa                               
+                </td>                
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
                 </td>
                 <td>                  
-                  N/A                                    
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
                 </td>                
             </tr>     
             <tr>
                 <td>                  
-                  N/A                                    
+                  Mike                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  09349283742                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  mike@gmail.com                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  Yangon,South Oakalarpa                               
+                </td>                
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
                 </td>
                 <td>                  
-                  N/A                                    
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
                 </td>                
             </tr>     
             <tr>
                 <td>                  
-                  N/A                                    
+                  Mike                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  09349283742                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  mike@gmail.com                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  Yangon,South Oakalarpa                               
+                </td>                
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
                 </td>
                 <td>                  
-                  N/A                                    
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
                 </td>                
             </tr>     
             <tr>
                 <td>                  
-                  N/A                                    
+                  Mike                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  09349283742                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  mike@gmail.com                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  Yangon,South Oakalarpa                               
+                </td>                
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
                 </td>
                 <td>                  
-                  N/A                                    
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
                 </td>                
             </tr>     
             <tr>
                 <td>                  
-                  N/A                                    
+                  Mike                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  09349283742                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  mike@gmail.com                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  Yangon,South Oakalarpa                               
+                </td>                
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
                 </td>
                 <td>                  
-                  N/A                                    
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
                 </td>                
             </tr>     
             <tr>
                 <td>                  
-                  N/A                                    
+                  Mike                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  09349283742                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  mike@gmail.com                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  Yangon,South Oakalarpa                               
+                </td>                
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
                 </td>
                 <td>                  
-                  N/A                                    
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
                 </td>                
             </tr>     
             <tr>
                 <td>                  
-                  N/A                                    
+                  Mike                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  09349283742                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  mike@gmail.com                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  Yangon,South Oakalarpa                               
+                </td>                
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
                 </td>
                 <td>                  
-                  N/A                                    
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
                 </td>                
             </tr>     
             <tr>
                 <td>                  
-                  N/A                                    
+                  Mike                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  09349283742                                   
                 </td>
                 <td>                  
-                  N/A                                    
+                  mike@gmail.com                                   
                 </td>
                 <td>                  
-                  N/A                                    
-                </td>
-                <td>                  
-                  N/A                                    
+                  Yangon,South Oakalarpa                               
                 </td>                
-            </tr>         
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
+                </td>
+                <td>                  
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
+                </td>                
+            </tr>     
+            <tr>
+                <td>                  
+                  Mike                                   
+                </td>
+                <td>                  
+                  09349283742                                   
+                </td>
+                <td>                  
+                  mike@gmail.com                                   
+                </td>
+                <td>                  
+                  Yangon,South Oakalarpa                               
+                </td>                
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
+                </td>
+                <td>                  
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
+                </td>                
+            </tr>     
+            <tr>
+                <td>                  
+                  Mike                                   
+                </td>
+                <td>                  
+                  09349283742                                   
+                </td>
+                <td>                  
+                  mike@gmail.com                                   
+                </td>
+                <td>                  
+                  Yangon,South Oakalarpa                               
+                </td>                
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
+                </td>
+                <td>                  
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
+                </td>                
+            </tr>     
+            <tr>
+                <td>                  
+                  Mike                                   
+                </td>
+                <td>                  
+                  09349283742                                   
+                </td>
+                <td>                  
+                  mike@gmail.com                                   
+                </td>
+                <td>                  
+                  Yangon,South Oakalarpa                               
+                </td>                
+                <td>
+                <a href="" style="color:green;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-edit"></i></a>  
+                </td>
+                <td>                  
+                  <a href="" style="color:red;display: block;margin: 0px auto;text-align: center;"><i class="fa fa-trash-o"></i></a>             
+                </td>                
+            </tr>     
         </tbody>       
     </table>
   </div>
@@ -239,7 +429,8 @@
     <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bulma.min.js"></script>
 
     
-    <script>      
+    <script>            
+
       $jq=jQuery.noConflict();     
       $jq(document).ready(function() {
           var table = $jq('#example').DataTable( {
@@ -254,5 +445,17 @@
               column.visible(!column.visible());              
           });
       });
+
+      function on() {
+        document.getElementById("add-student-overlay").style.display = "block";
+        document.getElementsByTagName("body")[0].style.overflowY = 'hidden !important';
+      }
+
+      function off() {
+        document.getElementById("add-student-overlay").style.display = "none";
+        document.getElementsByTagName("body")[0].style.overflowY = 'auto !important';
+      }
     </script>
+
+
 {% endblock script %}

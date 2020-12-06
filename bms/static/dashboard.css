@@ -727,6 +727,13 @@ a.article, a.article:hover {
   background: white;
   backdrop-filter: blur(8px);
 }
+
+.showmoreinfo-car{
+  -webkit-box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.67);
+  -moz-box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.67);
+  box-shadow: 0px 3px 11px 0px rgba(0,0,0,0.67);
+}
+
 /* car-info */
 
 
@@ -806,13 +813,110 @@ a.article, a.article:hover {
   cursor: pointer;
 }
 
-.but-page-change{
+/* .but-page-change{
   
-}
+} */
 
 /* salary-list */
 
 
+/* student-add-overlay */
+
+.car-back:hover{
+ background: rgb(255, 236, 129);
+ transition: 0.3s;
+ }
+	
+
+#add-student-overlay{
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 253, 253, 0.86);
+  z-index: 2; 
+  cursor: pointer; 
+}
+
+
+
+.overlay-student-add{
+  position: absolute;  
+  margin-top: 450px !important;
+  left: 49%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  background: white;
+  backdrop-filter: blur(8px);
+}
+
+.hidestudenttable{
+  display: none;
+  width: 380px;
+  color: black;
+  margin: 0px auto;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  -webkit-box-shadow: 0px 3px 9px -4px rgba(0,0,0,0.67);
+  -moz-box-shadow: 0px 3px 9px -4px rgba(0,0,0,0.67);
+  box-shadow: 0px 3px 9px -4px rgba(0,0,0,0.67);
+  cursor: pointer;
+}
+
+
+ .hidestudenttable table{
+ width: 95%;
+ height: 100%;
+ margin: 0px auto;
+ border-collapse: separate;
+ border-spacing: 0 10px;
+ }
+
+ .hidestudenttable table tr{
+ width: 90%;
+ height: 50px;
+ margin: 0px auto;
+ background: rgb(255, 236, 129);
+ }
+
+
+ .hidestudenttable table tr:hover{
+ background: #ebebeb;
+ }
+
+
+ .hidestudenttable table tr td:nth-child(1){
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px; 
+  border-right: 0.5px solid grey;
+  padding-left: 15px;
+  width: 40%;
+  vertical-align: middle;
+ }
+
+ .hidestudenttable table tr td:last-child{
+ border-top-right-radius: 10px;
+ border-bottom-right-radius: 10px; 
+ padding-left: 15px;
+ }
+
+ 
+.studentinputprofile{
+  border: none;
+  box-shadow: none;
+  width: 95%;
+  height:40px;
+  margin: 0px auto;
+  border-radius: 5px;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+/* student-add-overlay */
 
 
 /* MEDIAQUERY */
@@ -824,7 +928,7 @@ a.article, a.article:hover {
   width: 400px;
 }
 
-.hideprofiletable{
+.hideprofiletable,.hidestudenttable{
   width: 450px;
 }
 
@@ -867,7 +971,7 @@ a.article, a.article:hover {
   width: 370px;  
 }
 
-.hideprofiletable{
+.hideprofiletable,.hidestudenttable{
   width: 450px;
 }
 
@@ -923,7 +1027,7 @@ a.article, a.article:hover {
   width: 450px;  
 }
 
-.hideprofiletable{
+.hideprofiletable,.hidestudenttable{
   width: 450px;
 }
 
@@ -957,7 +1061,7 @@ a.article, a.article:hover {
   width: 530px;  
 }
 
-.hideprofiletable{
+.hideprofiletable,.hidestudenttable{
   width: 450px;
 }
 
@@ -1004,11 +1108,13 @@ a.article, a.article:hover {
   width: 700px;  
 }
 
-.hideprofiletable{
+.hideprofiletable,.hidestudenttable{
   width: 450px;
 }
 
- .profilebox{
+
+
+.profilebox{
  width: 450px;
  display: block;
  color: grey;
